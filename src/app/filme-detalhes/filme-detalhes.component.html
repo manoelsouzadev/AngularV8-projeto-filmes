@@ -1,0 +1,7 @@
+<div *ngFor="let filme of detalhesFilme">
+    <img [src]="filme.Poster" />
+    <h3>{{ filme.Title }}</h3>
+    <small>{{ filme.Genre }}, {{ filme.Year }}</small>
+    <p>{{ filme.Plot }}</p>
+</div>
+
