@@ -9,12 +9,11 @@ import { FilmeDetalhesService } from './filme-detalhes.service';
     styleUrls: ["./filme-detalhes.component.scss"]
 })
 export class FilmeDetalhesComponent implements OnInit {
-    id: string;
-    detalhesFilme: any[] = [];
+   private id: string;
+   protected detalhesFilme: any[] = [];
 
     constructor(
         private route: ActivatedRoute,
-        private homeService: HomeService,
         private filmeDetalhesService: FilmeDetalhesService
     ) {}
 

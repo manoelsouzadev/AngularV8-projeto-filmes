@@ -30,16 +30,15 @@
 </!--nav-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3" *ngFor="let filme of filmes">
-            <div class="card">
+        <div class="col-3" *ngFor="let filme of filmes" >
+            <div class="card card text-center" id="card-filme">
                 <div class="card-body">
                     <img
                         [src]="filme.Poster"
                         (click)="filmeDetalhes(filme.imdbID)"
                         class="card-img-top"
                     />
-                    {{ filme.Title }}
-                    {{ filme.Year }}
+                    <div><a (click)="filmeDetalhes(filme.imdbID)" class="btn btn-primary" id="btn-filme-detalhe">Ver mais</a></div>
                 </div>
             </div>
         </div>

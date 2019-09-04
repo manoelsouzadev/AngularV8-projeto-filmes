@@ -10,40 +10,34 @@ import { Router, ActivatedRoute } from "@angular/router";
     styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-    form: FormGroup;
-    filmes;
-    search;
-    cursos = [];
+    protected filmes: [];
+    private search: string;
 
     constructor(
         private route: ActivatedRoute,
         private homeService: HomeService,
-        private formBuilder: FormBuilder,
         private router: Router
-    ) { }
+    ) {}
 
     ngOnInit() {
         this.route.queryParams.subscribe((queryParams: any) => {
             this.search = queryParams["search"];
-
-            console.log("detalhe: " + this.search);
-            if(this.search != null || this.search != undefined){
+            //console.log("detalhe: " + this.search);
+            if (this.search != null || this.search != undefined) {
                 this.getFilmes();
             }
         });
-       
     }
+
     getFilmes() {
         this.homeService.buscarFilme(this.search).then(res => {
-           console.log(res);
+           // console.log(res);
             this.filmes = res.Search;
-          
         });
-  }
-    filmeDetalhes(id: string) {
-        console.log(id);
-        this.router.navigate(["/filme-detalhes"], { queryParams: { 'id': id } });
     }
 
-
+    filmeDetalhes(id: string) {
+       // console.log(id);
+        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id }});
+    }
 }

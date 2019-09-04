@@ -9,14 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    form: FormGroup;
-    filmes: [];
-    todosFilmes;
-    cursos = [];
+   protected form: FormGroup;
 
     constructor(
-        private route: ActivatedRoute,
-        private homeService: HomeService,
         private formBuilder: FormBuilder,
         private router: Router
     ) {}
@@ -27,12 +22,7 @@ export class AppComponent {
         });
     }
 
-    getFilmes(event) {
-        //const FILME = event.target.value;
-       // this.homeService.buscarFilme(this.form.get("nome").value).then(res => {
-        //    this.todosFilmes = res.Search;
-       // });
+    getFilmes() {
         this.router.navigate(["/"], { queryParams: { 'search': this.form.get("nome").value } });
-        
     }
 }
