@@ -1,50 +1,26 @@
-<!--nav-- class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <form class="form-inline my-2 my-lg-0" [formGroup]="form" id="float-right">
-        <input
-            class="form-control mr-sm-2"
-            formControlName="nome"
-            type="search"
-            placeholder="Pesquisar filme"
-            aria-label="Search"
-        />
-        <button
-            class="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-            (click)="getFilmes()"
-        >
-            Search
-        </button>
-    </form>
-</!--nav-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3" *ngFor="let filme of filmes" >
-            <div class="card card text-center" id="card-filme">
+        <div class="col-3" *ngFor="let filme of filmes">
+            <div class="card text-center" id="card-filme">
                 <div class="card-body">
                     <img
                         [src]="filme.Poster"
                         (click)="filmeDetalhes(filme.imdbID)"
                         class="card-img-top"
                     />
-                    <div><a (click)="filmeDetalhes(filme.imdbID)" class="btn btn-primary" id="btn-filme-detalhe">Ver mais</a></div>
+                    <div>
+                        <a
+                            (click)="filmeDetalhes(filme.imdbID)"
+                            class="btn btn-primary"
+                            id="btn-filme-detalhe"
+                            >Ver mais</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!--orm [formGroup]="form">
     <div class="card">

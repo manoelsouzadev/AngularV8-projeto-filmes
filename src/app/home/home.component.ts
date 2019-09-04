@@ -1,13 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { HomeService } from "./home.service";
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router, ActivatedRoute } from "@angular/router";
+import { HomeService } from './home.service';
 
 @Component({
-    selector: "app-home",
-    templateUrl: "./home.component.html",
-    styleUrls: ["./home.component.scss"]
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
     protected filmes: [];
@@ -21,10 +20,10 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.route.queryParams.subscribe((queryParams: any) => {
-            this.search = queryParams["search"];
-            //console.log("detalhe: " + this.search);
+            this.search = queryParams['search'];
             if (this.search != null || this.search != undefined) {
                 this.getFilmes();
+                console.log(this.filmes);
             }
         });
     }
@@ -38,6 +37,6 @@ export class HomeComponent implements OnInit {
 
     filmeDetalhes(id: string) {
        // console.log(id);
-        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id }});
+        this.router.navigate(['/filme-detalhes'], { queryParams: { 'id' : id }});
     }
 }

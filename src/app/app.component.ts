@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HomeService } from './home/home.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +22,6 @@ export class AppComponent {
     }
 
     getFilmes() {
-        this.router.navigate(["/"], { queryParams: { 'search': this.form.get("nome").value } });
+        this.router.navigate(['/'], { queryParams: { 'search': this.form.get('nome').value } });
     }
 }
