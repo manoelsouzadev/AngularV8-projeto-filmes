@@ -11,8 +11,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
     form: FormGroup;
-    filmes: [];
-    todosFilmes;
+    filmes;
+    search;
     cursos = [];
 
     constructor(
@@ -20,23 +20,30 @@ export class HomeComponent implements OnInit {
         private homeService: HomeService,
         private formBuilder: FormBuilder,
         private router: Router
-    ) {}
+    ) { }
 
     ngOnInit() {
-        this.form = this.formBuilder.group({
-            nome: [null, [Validators.required, Validators.minLength(4)]]
-        });
-    }
+        this.route.queryParams.subscribe((queryParams: any) => {
+            this.search = queryParams["search"];
 
-    getFilmes(event) {
-        //const FILME = event.target.value;
-        this.homeService.buscarFilme(this.form.get("nome").value).then(res => {
+            console.log("detalhe: " + this.search);
+            if(this.search != null || this.search != undefined){
+                this.getFilmes();
+            }
+        });
+       
+    }
+    getFilmes() {
+        this.homeService.buscarFilme(this.search).then(res => {
+           console.log(res);
             this.filmes = res.Search;
+          
         });
-    }
-
+  }
     filmeDetalhes(id: string) {
         console.log(id);
         this.router.navigate(["/filme-detalhes"], { queryParams: { 'id': id } });
     }
+
+
 }
