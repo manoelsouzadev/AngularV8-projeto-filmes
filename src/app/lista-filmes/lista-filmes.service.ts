@@ -1,11 +1,11 @@
-import { delay } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class FilmeDetalhesService {
+export class ListaFilmesService {
     apikey: string;
     url: string;
 
@@ -14,7 +14,7 @@ export class FilmeDetalhesService {
         this.url = 'http://www.omdbapi.com/?apikey=';
     }
 
-    buscarFilme(id: string): Promise<any> {
-        return this.http.get(`${this.url}${this.apikey}&i=${id}`).pipe(delay(2000)).toPromise();
+    buscarFilme(name: string): Promise<any> {
+        return this.http.get(`${this.url}${this.apikey}&s=${name}`).pipe(delay(2000)).toPromise();
     }
 }

@@ -22,6 +22,6 @@ export class AppComponent {
     }
 
     getFilmes() {
-        this.router.navigate(['/'], { queryParams: { 'search': this.form.get('nome').value } });
+        this.router.navigate(['home'], { queryParams: { 'search': this.form.get('nome').value } });
     }
 }

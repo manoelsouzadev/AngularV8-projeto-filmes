@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FilmeDetalhesComponent } from './filme-detalhes/filme-detalhes.component';
+import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, FilmeDetalhesComponent],
+    declarations: [AppComponent, HomeComponent, FilmeDetalhesComponent, ListaFilmesComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

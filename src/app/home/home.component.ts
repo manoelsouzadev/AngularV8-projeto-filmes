@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { HomeService } from './home.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-home',
@@ -10,33 +11,25 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
     protected filmes: [];
-    private search: string;
-
+  
     constructor(
-        private route: ActivatedRoute,
         private homeService: HomeService,
-        private router: Router
+        private router: Router,
     ) {}
-
+    
     ngOnInit() {
-        this.route.queryParams.subscribe((queryParams: any) => {
-            this.search = queryParams['search'];
-            if (this.search != null || this.search != undefined) {
-                this.getFilmes();
-                console.log(this.filmes);
-            }
-        });
+       this.getFilmes();
     }
 
     getFilmes() {
-        this.homeService.buscarFilme(this.search).then(res => {
+        this.homeService.buscarFilme('avengers').then(res => {
            // console.log(res);
             this.filmes = res.Search;
         });
     }
 
     filmeDetalhes(id: string) {
-       // console.log(id);
-        this.router.navigate(['/filme-detalhes'], { queryParams: { 'id' : id }});
-    }
+        // console.log(id);
+         this.router.navigate(['/filme-detalhes'], { queryParams: { 'id' : id }});
+     }
 }
