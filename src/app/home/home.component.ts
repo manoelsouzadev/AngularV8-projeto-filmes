@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { HomeService } from './home.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SharedService } from '../shared/services/shared.service';
 
 @Component({
     selector: 'app-home',
@@ -13,8 +12,8 @@ export class HomeComponent implements OnInit {
     protected filmes: [];
   
     constructor(
-        private homeService: HomeService,
         private router: Router,
+        private sharedService: SharedService
     ) {}
     
     ngOnInit() {
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
     }
 
     getFilmes() {
-        this.homeService.buscarFilme('avengers').then(res => {
+        this.sharedService.buscarFilme('avengers').then(res => {
            // console.log(res);
             this.filmes = res.Search;
         });

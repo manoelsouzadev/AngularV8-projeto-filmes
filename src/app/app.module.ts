@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FilmeDetalhesComponent } from './filme-detalhes/filme-detalhes.component';
 import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, FilmeDetalhesComponent, ListaFilmesComponent],
@@ -15,7 +16,9 @@ import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        SharedModule,
+        
     ],
     providers: [],
     bootstrap: [AppComponent]

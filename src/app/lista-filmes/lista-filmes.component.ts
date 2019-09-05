@@ -1,6 +1,7 @@
 import { OnInit, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ListaFilmesService } from './lista-filmes.service';
+
+import { SharedService } from '../shared/services/shared.service';
 
 @Component({
   selector: 'app-lista-filmes',
@@ -14,8 +15,8 @@ export class ListaFilmesComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private listaFilmesService: ListaFilmesService,
-        private router: Router
+        private router: Router,
+        private sharedService: SharedService
     ) {}
 
     ngOnInit() {
@@ -29,7 +30,7 @@ export class ListaFilmesComponent implements OnInit {
     }
 
     getFilmes() {
-        this.listaFilmesService.buscarFilme(this.search).then(res => {
+        this.sharedService.buscarFilme(this.search).then(res => {
            // console.log(res);
             this.filmes = res.Search;
         });

@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class HomeService {
+export class SharedService {
+
     apikey: string;
     url: string;
 
@@ -14,7 +15,8 @@ export class HomeService {
         this.url = 'http://www.omdbapi.com/?apikey=';
     }
 
-    buscarFilme(name: string): Promise<any> {
-        return this.http.get(`${this.url}${this.apikey}&s=${name}`).pipe(delay(2000)).toPromise();
-    }
+
+  buscarFilme(name: string): Promise<any> {
+    return this.http.get(`${this.url}${this.apikey}&s=${name}`).pipe(delay(2000)).toPromise();
+}
 }

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ListaFilmesService } from './lista-filmes.service';
+import { SharedService } from './shared.service';
 
-describe('ListaFilmesService', () => {
+describe('SharedService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ListaFilmesService = TestBed.get(ListaFilmesService);
+    const service: SharedService = TestBed.get(SharedService);
     expect(service).toBeTruthy();
   });
 });

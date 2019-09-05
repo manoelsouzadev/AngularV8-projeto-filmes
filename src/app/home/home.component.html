@@ -1,6 +1,6 @@
 <div class="container-fluid" *ngIf="filmes; else loading">
     <div class="row">
-        <div class="col-3" *ngFor="let filme of filmes">
+        <div class="col-2" *ngFor="let filme of filmes">
             <div class="card text-center" id="card-filme">
                 <div class="card-body">
                     <img
@@ -11,7 +11,7 @@
                     <div>
                         <a
                             (click)="filmeDetalhes(filme.imdbID)"
-                            class="btn btn-primary"
+                            class="btn btn-primary btn-sm"
                             id="btn-filme-detalhe"
                             >Ver mais</a
                         >
@@ -23,30 +23,5 @@
 </div>
 
 <ng-template #loading>
-    <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-primary" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-secondary" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-success" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-danger" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-warning" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-info" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-light" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <div class="spinner-grow text-dark" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+        <spinner-load></spinner-load> 
 </ng-template>
