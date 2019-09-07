@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
         this.form = this.formBuilder.group({
-            nome: [null, [Validators.required, Validators.minLength(4)]]
+            nome: [null, [Validators.required, Validators.minLength(2)]]
         });
     }
 

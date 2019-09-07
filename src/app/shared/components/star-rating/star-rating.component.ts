@@ -1,19 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'star-rating',
-  templateUrl: './star-rating.component.html',
-  styleUrls: ['./star-rating.component.scss']
+    selector: 'star-rating',
+    templateUrl: './star-rating.component.html',
+    styleUrls: ['./star-rating.component.scss']
 })
-export class StarRatingComponent {
-  protected rating: number;
-  protected form: FormGroup;
- 
-  constructor(private fb: FormBuilder){
-    this.rating = 0;
-    this.form = this.fb.group({
-      rating: ['', Validators.required],
-    })
-  }
+export class StarRatingComponent implements OnInit {
+    protected form: FormGroup;
+    @Input() ratingValue: string;
+    protected rating: number;
+
+    constructor(private fb: FormBuilder) {}
+
+    ngOnInit() {
+        this.form = this.fb.group({
+            rating: [this.getRating(), Validators.required]
+        });
+    }
+
+    getRating() {
+        if (this.ratingValue > '5') {
+            return (this.rating = parseInt(this.ratingValue) / 2);
+        } else {
+            return parseInt(this.ratingValue);
+        }
+    }
 }

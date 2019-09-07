@@ -4,6 +4,9 @@
     <h3>{{ filme.Title }}</h3>
     <small>{{ filme.Genre }}, {{ filme.Year }}</small>
     <p>{{ filme.Plot }}</p>
+    <p>{{ filme.imdbRating }}</p>
+    <star-rating [ratingValue]="filme.imdbRating"
+     ></star-rating>
 </div>
 </div>
 <ng-template #loading>

@@ -1,6 +1,6 @@
 <div class="container-fluid" *ngIf="filmes; else loading">
     <div class="row">
-        <div class="col-2" *ngFor="let filme of filmes">
+        <div class="col-2 col-number" *ngFor="let filme of filmes">
             <div class="card text-center" id="card-filme">
                 <img
                     [src]="filme.Poster"
