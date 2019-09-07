@@ -1,28 +1,29 @@
 <div class="container-fluid" *ngIf="filmes; else loading">
     <div class="row">
-        <div class="col-3" *ngFor="let filme of filmes">
+        <div class="col-2" *ngFor="let filme of filmes">
             <div class="card text-center" id="card-filme">
+                <img
+                    [src]="filme.Poster"
+                    (click)="filmeDetalhes(filme.imdbID)"
+                    class="card-img-top"
+                />
                 <div class="card-body">
-                    <img
-                        [src]="filme.Poster"
-                        (click)="filmeDetalhes(filme.imdbID)"
-                        class="card-img-top"
-                    />
-                    <div>
+                        <h6 class="card-title">{{ filme.Title }}</h6>
+                    <!--<div>
                         <a
                             (click)="filmeDetalhes(filme.imdbID)"
                             class="btn btn-primary"
                             id="btn-filme-detalhe"
                             >Ver mais</a
                         >
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
     </div>
 </div>
 <ng-template #loading>
-      <spinner-load></spinner-load> 
+    <spinner-load></spinner-load>
 </ng-template>
 
 <!--orm [formGroup]="form">
@@ -83,4 +84,3 @@
       </div>
     </div>
   </div-->
-

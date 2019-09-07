@@ -9,16 +9,18 @@ import { HomeComponent } from './home/home.component';
 import { FilmeDetalhesComponent } from './filme-detalhes/filme-detalhes.component';
 import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { SharedModule } from './shared/shared.module';
+import { NavbarComponent } from './navbar/navbar.component';
+ import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, FilmeDetalhesComponent, ListaFilmesComponent],
+    declarations: [AppComponent, HomeComponent, FilmeDetalhesComponent, ListaFilmesComponent, NavbarComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
         SharedModule,
-        
+        NgxStarRatingModule
     ],
     providers: [],
     bootstrap: [AppComponent]

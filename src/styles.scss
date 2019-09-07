@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
 .card:hover {
-    background-color: rgb(175, 175, 175);
+    color: #FFF;
+    background-color: rgb(48, 48, 48);
+    transform: scale(1.05);
+    transition-duration: 0.5s;
 }
+

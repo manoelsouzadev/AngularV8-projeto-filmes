@@ -31,6 +31,7 @@ export class FilmeDetalhesComponent implements OnInit {
     getFilmes(){
         this.filmeDetalhesService.buscarFilme(this.id).then(res => {
             this.detalhesFilme = Array.of(res);
+            console.log(this.detalhesFilme);
         });
     }
 }
