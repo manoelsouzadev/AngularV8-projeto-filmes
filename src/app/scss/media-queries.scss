@@ -1,7 +1,13 @@
+@media (max-width: 1024px) {
+    .col-number {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
 
 @media (max-width: 767px) {
-.col-number {
-    flex: 0 0 100%;
-    max-width: 100%;
-}
+    .col-number {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

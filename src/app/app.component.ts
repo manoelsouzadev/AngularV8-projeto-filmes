@@ -3,17 +3,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-   protected form: FormGroup;
+    protected form: FormGroup;
 
-    constructor(
-        private formBuilder: FormBuilder,
-        private router: Router
-    ) {}
+    constructor(private formBuilder: FormBuilder, private router: Router) {}
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -22,6 +19,8 @@ export class AppComponent {
     }
 
     getFilmes() {
-        this.router.navigate(['home'], { queryParams: { 'search': this.form.get('nome').value } });
+        this.router.navigate(['home'], {
+            queryParams: { search: this.form.get('nome').value }
+        });
     }
 }

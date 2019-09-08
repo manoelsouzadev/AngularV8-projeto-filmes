@@ -5,18 +5,13 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
-  declarations: [SpinnerLoadComponent, StarRatingComponent, StarRatingComponent ],
-  imports: [
-    CommonModule,
-    NgxStarRatingModule,
-    ReactiveFormsModule
-  ],
-  exports:[
-      SpinnerLoadComponent,
-      StarRatingComponent
-  ]
+    declarations: [
+        SpinnerLoadComponent,
+        StarRatingComponent,
+        StarRatingComponent
+    ],
+    imports: [CommonModule, NgxStarRatingModule, ReactiveFormsModule],
+    exports: [SpinnerLoadComponent, StarRatingComponent]
 })
-export class SharedModule { }
+export class SharedModule {}

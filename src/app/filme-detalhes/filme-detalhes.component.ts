@@ -9,8 +9,8 @@ import { FilmeDetalhesService } from './filme-detalhes.service';
     styleUrls: ['./filme-detalhes.component.scss']
 })
 export class FilmeDetalhesComponent implements OnInit {
-   private id: string;
-   protected detalhesFilme: any[];
+    private id: string;
+    protected detalhesFilme: any[];
 
     constructor(
         private route: ActivatedRoute,
@@ -21,14 +21,14 @@ export class FilmeDetalhesComponent implements OnInit {
         this.route.queryParams.subscribe((queryParams: any) => {
             this.id = queryParams['id'];
         });
-        
+
         if (this.id != null || this.id != undefined) {
             this.getFilmes();
             console.log(this.id);
         }
     }
 
-    getFilmes(){
+    getFilmes() {
         this.filmeDetalhesService.buscarFilme(this.id).then(res => {
             this.detalhesFilme = Array.of(res);
             console.log(this.detalhesFilme);

@@ -10,25 +10,22 @@ import { SharedService } from '../shared/services/shared.service';
 })
 export class HomeComponent implements OnInit {
     protected filmes: [];
-  
-    constructor(
-        private router: Router,
-        private sharedService: SharedService
-    ) {}
-    
+
+    constructor(private router: Router, private sharedService: SharedService) {}
+
     ngOnInit() {
-       this.getFilmes();
+        this.getFilmes();
     }
 
     getFilmes() {
         this.sharedService.buscarFilme('avengers').then(res => {
-           // console.log(res);
+            // console.log(res);
             this.filmes = res.Search;
         });
     }
 
     filmeDetalhes(id: string) {
         // console.log(id);
-         this.router.navigate(['/filme-detalhes'], { queryParams: { 'id' : id }});
-     }
+        this.router.navigate(['/filme-detalhes'], { queryParams: { id: id } });
+    }
 }

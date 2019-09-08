@@ -1,20 +1,20 @@
 import { delay } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
     providedIn: 'root'
 })
 export class FilmeDetalhesService {
-    apikey: string;
-    url: string;
+    private readonly API = environment.API;
 
-    constructor(private http: HttpClient) {
-        this.apikey = 'c901dbca';
-        this.url = 'http://www.omdbapi.com/?apikey=';
-    }
+    constructor(private http: HttpClient) {}
 
     buscarFilme(id: string): Promise<any> {
-        return this.http.get(`${this.url}${this.apikey}&i=${id}`).pipe(delay(2000)).toPromise();
+        return this.http
+            .get(`${this.API}&i=${id}`)
+            .pipe(delay(2000))
+            .toPromise();
     }
 }

@@ -4,12 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../shared/services/shared.service';
 
 @Component({
-  selector: 'app-lista-filmes',
-  templateUrl: './lista-filmes.component.html',
-  styleUrls: ['./lista-filmes.component.scss']
+    selector: 'app-lista-filmes',
+    templateUrl: './lista-filmes.component.html',
+    styleUrls: ['./lista-filmes.component.scss']
 })
 export class ListaFilmesComponent implements OnInit {
-
     protected filmes: [];
     private search: string;
 
@@ -31,14 +30,13 @@ export class ListaFilmesComponent implements OnInit {
 
     getFilmes() {
         this.sharedService.buscarFilme(this.search).then(res => {
-           // console.log(res);
+            // console.log(res);
             this.filmes = res.Search;
         });
     }
 
     filmeDetalhes(id: string) {
-       // console.log(id);
-        this.router.navigate(['/filme-detalhes'], { queryParams: { 'id' : id }});
+        // console.log(id);
+        this.router.navigate(['/filme-detalhes'], { queryParams: { id: id } });
     }
 }
-
