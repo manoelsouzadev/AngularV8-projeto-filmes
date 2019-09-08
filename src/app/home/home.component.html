@@ -1,12 +1,12 @@
 <div class="container-fluid" *ngIf="filmes; else loading">
     <div class="row">
         <div class="col-2 col-number" *ngFor="let filme of filmes">
-            <div class="card text-center" id="card-filme">
-                <img
-                    [src]="filme.Poster"
-                    (click)="filmeDetalhes(filme.imdbID)"
-                    class="card-img-top"
-                />
+            <div
+                class="card text-center"
+                id="card-filme"
+                (click)="filmeDetalhes(filme.imdbID)"
+            >
+                <img [src]="filme.Poster" class="card-img-top" />
                 <div class="card-body">
                     <h6 class="card-title">{{ filme.Title }}</h6>
                     <!-- <a
