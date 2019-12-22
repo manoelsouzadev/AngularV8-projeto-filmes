@@ -1,13 +1,30 @@
 <div *ngIf="detalhesFilme; else loading">
-    <div *ngFor="let filme of detalhesFilme">
-        <img [src]="filme.Poster" />
-        <h3>{{ filme.Title }}</h3>
-        <small>{{ filme.Genre }}, {{ filme.Year }}</small>
-        <p>{{ filme.Plot }}</p>
-        <p>{{ filme.imdbRating }}</p>
-        <star-rating [ratingValue]="filme.imdbRating"></star-rating>
+    <div class="container-fluid" *ngFor="let filme of detalhesFilme">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img [src]="filme.Poster" />
+                </div>
+                <div class="col">
+                    <h3>{{ filme.Title }}</h3>
+                    <small>{{ filme.Genre }}, {{ filme.Year }}</small><br/>
+                    <small>Director: {{ filme.Director}}</small><br/>
+                    <small>Released: {{ filme.Released }}</small><br/>
+                    <small>Production: {{ filme.Production }}</small><br/>
+                    <small>Runtime: {{ filme.Runtime }}</small><br/>
+                    <small>Type: {{ filme.Type }}</small>
+                    <p style="text-align: justify; margin-top: 15px;">{{ filme.Plot }}</p>
+                    <!-- <p>{{ filme.imdbRating }}</p> -->
+
+                    <star-rating
+                        [ratingValue]="filme.imdbRating"
+                    ></star-rating>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <ng-template #loading>
+        <spinner-load></spinner-load>
+    </ng-template>
 </div>
-<ng-template #loading>
-    <spinner-load></spinner-load>
-</ng-template>

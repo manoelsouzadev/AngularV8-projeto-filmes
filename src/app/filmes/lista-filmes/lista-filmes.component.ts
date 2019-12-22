@@ -1,8 +1,7 @@
 import { OnInit, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { SharedService } from '../shared/services/shared.service';
-import { tap, map } from 'rxjs/operators';
+import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
     selector: 'app-lista-filmes',
@@ -10,7 +9,7 @@ import { tap, map } from 'rxjs/operators';
     styleUrls: ['./lista-filmes.component.scss']
 })
 export class ListaFilmesComponent implements OnInit {
-    protected filmes;
+    protected filmes: [];
     private search: string;
 
     constructor(
@@ -30,12 +29,10 @@ export class ListaFilmesComponent implements OnInit {
     }
 
     getFilmes() {
-        // this.sharedService.buscarFilme(this.search).then(res => {
-        //      console.log('promise'+ res);
-        //     this.filmes = res.Search;
-        // });
-
-        this.sharedService.buscarFilme2(this.search).pipe(tap(console.log)).subscribe(res => this.filmes = res);
+        this.sharedService.buscarFilme(this.search).then(res => {
+            // console.log(res);
+            this.filmes = res.Search;
+        });
     }
 
     filmeDetalhes(id: string) {

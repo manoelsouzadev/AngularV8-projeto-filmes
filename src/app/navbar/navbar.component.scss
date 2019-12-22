@@ -13,9 +13,15 @@
     // background: linear-gradient(120deg, #ee1c2e, #00539f);
 }
 
-#navbar-menu a {
-    color: #fff;
+// #navbar-menu a {
+//     color:rgba(255, 255, 255, 0.5);
+// }
+  
+.text-color{
+    color: #000;
 }
+
+
 
 .input-search-filmes {
     border-radius: 17px;
@@ -27,4 +33,20 @@
 .cor-icon {
     background: red;
     color: green;
+}
+
+@media (width: 768px) {
+    .col-number {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .btn-search{
+        margin-left: 93%;
+     }
+
+     .input-search{
+        margin-bottom: 6px;
+        width: 100%;
+    }
 }

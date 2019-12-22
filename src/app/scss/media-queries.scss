@@ -3,6 +3,26 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }
+    
+    .btn-search{
+       margin-left: 88%;
+    }
+}
+
+@media (width: 768px) {
+    .col-number {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .btn-search{
+        margin-left: 93%;
+     }
+
+     .input-search{
+        margin-bottom: 6px;
+        width: 100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -11,3 +31,4 @@
         max-width: 100%;
     }
 }
+

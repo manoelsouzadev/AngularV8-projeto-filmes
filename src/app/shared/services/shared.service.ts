@@ -17,4 +17,10 @@ export class SharedService {
             .pipe(delay(2000))
             .toPromise();
     }
+
+    buscarFilme2(name: string){
+        return this.http
+            .get(`${this.API}&s=${name}`)
+            .pipe(delay(2000), map((value : any) => value.Search));
+    }
 }
