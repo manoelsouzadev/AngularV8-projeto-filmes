@@ -11,6 +11,7 @@ import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { SharedModule } from './shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import { QuemSouComponent } from './quem-sou/quem-sou.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
         HomeComponent,
         FilmeDetalhesComponent,
         ListaFilmesComponent,
-        NavbarComponent
+        NavbarComponent,
+        QuemSouComponent
     ],
     imports: [
         BrowserModule,

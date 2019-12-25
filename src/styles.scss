@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './app/scss/media-queries.scss';
-.card:hover {
+.card-transform:hover {
     color: #FFF;
     background-color: rgb(48, 48, 48);
     transform: scale(1.05);
     transition-duration: 0.5s;
     cursor: pointer;
+    text-align: center;
 }
 
