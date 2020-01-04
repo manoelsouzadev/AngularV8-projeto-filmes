@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'http://www.omdbapi.com/?apikey=c901dbca'
+  API: 'Sua API aqui'
 };
 
 /*
