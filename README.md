@@ -1,4 +1,4 @@
-# ProjetoFilmes
+# Projeto Filmes Angular 8
 
 Aplicação para gerenciamento diário de Igrejas.
 
