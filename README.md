@@ -1,4 +1,4 @@
-# Projeto Filmes Angular 8
+# Projeto Filmes Angular
 
 Aplicação para mostar deralhes de filmes.
 
