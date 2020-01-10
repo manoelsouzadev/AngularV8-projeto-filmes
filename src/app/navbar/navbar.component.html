@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar-menu">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar-menu">
     <a
         class="navbar-brand"
         [routerLink]="['/']"
@@ -38,7 +38,7 @@
             </li>
             <li class="nav-item">
                     <a class="nav-link" href="#">API Omdb</a>
-                </li>
+                </li> -->
             <!-- <li class="nav-item dropdown text-color">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown
@@ -59,7 +59,7 @@
                     >Disabled</a
                 >
             </li> -->
-        </ul>
+        <!-- </ul>
 
         <form
             class="form-inline my-2 my-lg-0"
@@ -82,4 +82,81 @@
             </button>
         </form>
     </div>
-</nav>
+</nav> -->
+
+
+<nav class="navbar navbar-dark bg-dark" id="navbar-menu">
+     <a
+        class="navbar-brand"
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active"
+    >
+        <img
+            src="/assets/img/main-logo.png"
+            width="34"
+            height="34"
+            class="d-inline-block align-top"
+            alt=""
+        />
+        FilmesDB
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse" id="navbarsExample01" style="">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/" id="home" 
+                >Home <span class="sr-only">(current)</span></a
+            >
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="quem_sou" href="/quem-sou">Quem Sou</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="#">API Omdb</a>
+            </li> 
+        <li class="nav-item dropdown text-color">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> 
+         <li class="nav-item">
+            <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+            >
+        </li> 
+      </ul>
+      <form
+      class="form-inline my-2 my-lg-0"
+      [formGroup]="form"
+      id="float-right"
+  >
+      <input
+          class="form-control mr-sm-2 input-search-filmes input-search"
+          formControlName="nome"
+          type="search"
+          placeholder="Pesquisar filme"
+          aria-label="Search"
+      />
+      <button
+      class="btn btn-outline-primary my-2 my-sm-0 btn-bd-search btn-search"
+      type="submit"
+      (click)="getFilmes()"
+  >
+      <i class="fa fa-search" aria-hidden="true"></i>
+  </button>
+</form>
+    </div>
+  </nav>
