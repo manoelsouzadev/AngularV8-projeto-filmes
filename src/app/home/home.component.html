@@ -1,4 +1,8 @@
-<div class="container-fluid" *ngIf="filmes; else loading">
+<div
+    id="div-margin-bottom"
+    class="container-fluid"
+    *ngIf="filmes; else loading"
+>
     <div class="row">
         <div class="col-2 col-number" *ngFor="let filme of filmes">
             <div
@@ -8,7 +12,9 @@
             >
                 <img [src]="filme.Poster" class="card-img-top" />
                 <div class="card-body">
-                    <small class="card-title show-title">{{ filme.Title }}</small>
+                    <small class="card-title show-title">{{
+                        filme.Title
+                    }}</small>
                     <!-- <a
                             (click)="filmeDetalhes(filme.imdbID)"
                             class="btn btn-primary btn-sm"
@@ -20,6 +26,7 @@
         </div>
     </div>
 </div>
+<app-footer *ngIf="filmes"></app-footer>
 
 <ng-template #loading>
     <spinner-load></spinner-load>

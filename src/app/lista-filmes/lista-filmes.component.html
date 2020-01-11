@@ -1,4 +1,8 @@
-<div class="container-fluid" *ngIf="filmes; else loading">
+<div
+    id="div-margin-bottom"
+    class="container-fluid"
+    *ngIf="filmes; else loading"
+>
     <div class="row">
         <div class="col-2 col-number" *ngFor="let filme of filmes">
             <div
@@ -22,6 +26,7 @@
         </div>
     </div>
 </div>
+<app-footer *ngIf="filmes"></app-footer>
 <ng-template #loading>
     <spinner-load></spinner-load>
 </ng-template>

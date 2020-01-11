@@ -1,4 +1,4 @@
-<div *ngIf="detalhesFilme; else loading">
+<div id="div-margin-bottom" *ngIf="detalhesFilme; else loading">
     <div class="container-fluid" *ngFor="let filme of detalhesFilme">
         <div class="container">
             <div class="row">
@@ -7,24 +7,29 @@
                 </div>
                 <div class="col">
                     <h3>{{ filme.Title }}</h3>
-                    <small>{{ filme.Genre }}, {{ filme.Year }}</small><br/>
-                    <small>Director: {{ filme.Director}}</small><br/>
-                    <small>Released: {{ filme.Released }}</small><br/>
-                    <small>Production: {{ filme.Production }}</small><br/>
-                    <small>Runtime: {{ filme.Runtime }}</small><br/>
+                    <small>{{ filme.Genre }}, {{ filme.Year }}</small
+                    ><br />
+                    <small>Director: {{ filme.Director }}</small
+                    ><br />
+                    <small>Released: {{ filme.Released }}</small
+                    ><br />
+                    <small>Production: {{ filme.Production }}</small
+                    ><br />
+                    <small>Runtime: {{ filme.Runtime }}</small
+                    ><br />
                     <small>Type: {{ filme.Type }}</small>
-                    <p style="text-align: justify; margin-top: 15px;">{{ filme.Plot }}</p>
+                    <p style="text-align: justify; margin-top: 15px;">
+                        {{ filme.Plot }}
+                    </p>
                     <!-- <p>{{ filme.imdbRating }}</p> -->
 
-                    <star-rating
-                        [ratingValue]="filme.imdbRating"
-                    ></star-rating>
+                    <star-rating [ratingValue]="filme.imdbRating"></star-rating>
                 </div>
             </div>
         </div>
+        <app-footer *ngIf="filme"></app-footer>
     </div>
-
-    <ng-template #loading>
-        <spinner-load></spinner-load>
-    </ng-template>
 </div>
+<ng-template #loading>
+    <spinner-load></spinner-load>
+</ng-template>
