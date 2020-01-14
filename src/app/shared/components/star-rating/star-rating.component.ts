@@ -7,9 +7,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     styleUrls: ['./star-rating.component.scss']
 })
 export class StarRatingComponent implements OnInit {
-    protected form: FormGroup;
+    public form: FormGroup;
     @Input() ratingValue: string;
-    protected rating: number;
+    public rating: number;
 
     constructor(private fb: FormBuilder) {}
 

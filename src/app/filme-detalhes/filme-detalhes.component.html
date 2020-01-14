@@ -1,9 +1,9 @@
 <div id="div-margin-bottom" *ngIf="detalhesFilme; else loading">
-    <div class="container-fluid" *ngFor="let filme of detalhesFilme">
+    <div *ngFor="let filme of detalhesFilme">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <img [src]="filme.Poster" />
+                    <img [src]="filme.Poster"/>
                 </div>
                 <div class="col">
                     <h3>{{ filme.Title }}</h3>

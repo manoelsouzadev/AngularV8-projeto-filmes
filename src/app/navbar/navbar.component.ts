@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
     styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-    protected form: FormGroup;
+    public form: FormGroup;
     private homeLink;
     private quemSouLink;
 

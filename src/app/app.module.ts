@@ -13,6 +13,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { QuemSouComponent } from './quem-sou/quem-sou.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FilmeNaoEncontradoComponent } from './filme-nao-encontrado/filme-nao-encontrado.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
         ListaFilmesComponent,
         NavbarComponent,
         QuemSouComponent,
-        FooterComponent
+        FooterComponent,
+        FilmeNaoEncontradoComponent
     ],
     imports: [
         BrowserModule,
@@ -30,7 +34,8 @@ import { FooterComponent } from './footer/footer.component';
         HttpClientModule,
         ReactiveFormsModule,
         SharedModule,
-        NgxStarRatingModule
+        NgxStarRatingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [],
     bootstrap: [AppComponent]

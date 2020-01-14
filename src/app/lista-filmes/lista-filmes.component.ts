@@ -1,16 +1,16 @@
-import { OnInit, Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { OnInit, Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { SharedService } from '../shared/services/shared.service';
-import { tap, map } from 'rxjs/operators';
+import { SharedService } from "../shared/services/shared.service";
+import { tap, map } from "rxjs/operators";
 
 @Component({
-    selector: 'app-lista-filmes',
-    templateUrl: './lista-filmes.component.html',
-    styleUrls: ['./lista-filmes.component.scss']
+    selector: "app-lista-filmes",
+    templateUrl: "./lista-filmes.component.html",
+    styleUrls: ["./lista-filmes.component.scss"]
 })
 export class ListaFilmesComponent implements OnInit {
-    protected filmes;
+    public filmes;
     private search: string;
 
     constructor(
@@ -21,7 +21,7 @@ export class ListaFilmesComponent implements OnInit {
 
     ngOnInit() {
         this.route.queryParams.subscribe((queryParams: any) => {
-            this.search = queryParams['search'];
+            this.search = queryParams["search"];
             if (this.search != null || this.search != undefined) {
                 this.getFilmes();
                 console.log(this.filmes);
@@ -29,17 +29,20 @@ export class ListaFilmesComponent implements OnInit {
         });
     }
 
-    getFilmes() {
+    async getFilmes() {
         // this.sharedService.buscarFilme(this.search).then(res => {
         //      console.log('promise'+ res);
         //     this.filmes = res.Search;
         // });
 
-        this.sharedService.buscarFilme2(this.search).pipe(tap(console.log)).subscribe(res => this.filmes = res);
+       await this.sharedService
+            .buscarFilme2(this.search)
+            .pipe(tap(console.log))
+            .subscribe(res => (this.filmes = res));
     }
 
     filmeDetalhes(id: string) {
         // console.log(id);
-        this.router.navigate(['/filme-detalhes'], { queryParams: { id: id } });
+        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id } });
     }
 }

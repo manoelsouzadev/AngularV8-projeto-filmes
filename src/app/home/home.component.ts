@@ -9,7 +9,7 @@ import { SharedService } from '../shared/services/shared.service';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    protected filmes: [];
+    public filmes: [];
 
     constructor(private router: Router, private sharedService: SharedService) {}
 

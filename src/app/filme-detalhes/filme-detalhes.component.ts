@@ -10,7 +10,7 @@ import { FilmeDetalhesService } from './filme-detalhes.service';
 })
 export class FilmeDetalhesComponent implements OnInit {
     private id: string;
-    protected detalhesFilme: any[];
+    public detalhesFilme: any[];
 
     constructor(
         private route: ActivatedRoute,
