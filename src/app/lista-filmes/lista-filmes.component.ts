@@ -13,6 +13,10 @@ export class ListaFilmesComponent implements OnInit {
     public filmes;
     private search: string;
 
+    private total;
+    private currentPage = 1;
+    public show = true;
+
     constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -29,16 +33,98 @@ export class ListaFilmesComponent implements OnInit {
         });
     }
 
-    async getFilmes() {
-        // this.sharedService.buscarFilme(this.search).then(res => {
-        //      console.log('promise'+ res);
-        //     this.filmes = res.Search;
+    // async getFilmes() {
+    //     // this.sharedService.buscarFilme(this.search).then(res => {
+    //     //      console.log('promise'+ res);
+    //     //     this.filmes = res.Search;
+    //     // });
+
+    //     await this.sharedService
+    //         .buscarFilme2(this.search)
+    //         .pipe(tap(console.log))
+    //         .subscribe(res => (this.filmes = res));
+    // }
+
+    getFilmes() {
+        // this.homeService.buscarFilme(this.search).subscribe(res => {
+        //     this.filmes = res;
+        //     console.log(res);
         // });
 
-       await this.sharedService
-            .buscarFilme2(this.search)
-            .pipe(tap(console.log))
-            .subscribe(res => (this.filmes = res));
+        this.sharedService.buscarFilmeOther(this.search).subscribe((res: any) => {
+            this.filmes = res.Search;
+            if (
+                res.Search === "" ||
+                res.Search === undefined ||
+                res.Search === null
+            ) {
+                this.router.navigate(["/nao-encontrado"]);
+                setTimeout(() => {
+                    this.router.navigate(["/"]);
+                }, 5000);
+            }
+            this.setTotal(res.totalResults);
+        });
+        //  console.log("total: " + this.total);
+        //this.homeService.returnRes(this.search).pipe( map((value: any) => this.onConsole( value.totalResults))).subscribe(res => console.log(res))
+        // this.homeService.returnRes(this.search).subscribe((res:any) => console.log(res.Search, res.totalResults))
+
+        // console.log(this.homeService.returnTotal().subscribe(res => console.log(res)));
+    }
+
+    setTotal(value) {
+        this.total = value;
+        console.log("setTotal: " + this.total);
+    }
+
+    previousOrNextPage(direction) {
+        let per = Math.ceil(this.total / 10);
+        if (direction === "start") {
+            this.show = true;
+            this.sharedService
+                .buscarFilmeOther(this.search, 1)
+                .subscribe((res: any) => {
+                    this.filmes = res.Search;
+                    this.setTotal(res.totalResults);
+                });
+        }
+        if (direction === "end") {
+            this.show = false;
+            this.sharedService
+                .buscarFilmeOther(this.search, per)
+                .subscribe((res: any) => {
+                    this.filmes = res.Search;
+                    this.setTotal(res.totalResults);
+                });
+        }
+        if (direction === "previous") {
+            this.show = true;
+            if (this.currentPage-- > 1) {
+                // if( this.currentPage-- === 0){
+                this.sharedService
+                    .buscarFilmeOther(this.search, this.currentPage)
+                    .subscribe((res: any) => {
+                        this.filmes = res.Search;
+                        this.setTotal(res.totalResults);
+                    });
+            } else {
+                // this.homeService.buscarFilme2(this.search, this.currentPage).subscribe((res:any) => {this.filmes = res.Search; this.setTotal(res.totalResults)});
+                return;
+            }
+        }
+        if (direction === "next") {
+            this.show = true;
+            if (this.currentPage++ <= per - 1) {
+                this.sharedService
+                    .buscarFilmeOther(this.search, this.currentPage)
+                    .subscribe((res: any) => {
+                        this.filmes = res.Search;
+                        this.setTotal(res.totalResults);
+                    });
+            } else {
+                return;
+            }
+        }
     }
 
     filmeDetalhes(id: string) {

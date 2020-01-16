@@ -19,23 +19,38 @@ export class SharedService {
             .toPromise();
     }
 
-    buscarFilme2(name: string) {
-        return this.http.get(`${this.API}&s=${name}`).pipe(
-            delay(2000),
-            map((value: any) => {
-                if (
-                    value.Search === '' ||
-                    value.Search === undefined ||
-                    value.Search === null
-                ) {
-                    this.router.navigate(["/nao-encontrado"]);
-                    setTimeout(() => {
-                        this.router.navigate(["/"]);
-                    }, 5000);
-                }else{
-                    return value.Search;
-                }
-            })
-        );
+    // buscarFilme2(name: string, pageNumber?) {
+    //     return this.http.get(`${this.API}&s=${name}`).pipe(
+    //         delay(2000),
+    //         map((value: any) => {
+    //             if (
+    //                 value.Search === '' ||
+    //                 value.Search === undefined ||
+    //                 value.Search === null
+    //             ) {
+    //                 this.router.navigate(["/nao-encontrado"]);
+    //                 setTimeout(() => {
+    //                     this.router.navigate(["/"]);
+    //                 }, 5000);
+    //             }
+    //             if (pageNumber != null) {
+    //                 return this.http
+    //                     .get(`${this.API}&s=${name}&page=${pageNumber}`);
+    //             } else {
+    //                 return this.http.get(`${this.API}&s=${name}`);
+    //             }
+    //         })
+    //     );
+    // }
+
+
+
+    buscarFilmeOther(name: string, pageNumber?) {
+        if (pageNumber != null) {
+            return this.http
+                .get(`${this.API}&s=${name}&page=${pageNumber}`);
+        } else {
+            return this.http.get(`${this.API}&s=${name}`);
+        }
     }
 }

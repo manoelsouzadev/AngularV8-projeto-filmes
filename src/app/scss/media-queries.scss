@@ -3,9 +3,9 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }
-    
-    .btn-search{
-       margin-left: 88%;
+
+    .btn-search {
+        margin-left: 88%;
     }
 }
 
@@ -15,13 +15,23 @@
         max-width: 100%;
     }
 
-    .btn-search{
+    .btn-search {
         margin-left: 93%;
-     }
+    }
 
-     .input-search{
+    .input-search {
         margin-bottom: 6px;
         width: 100%;
+    }
+
+    .center-title {
+        text-align: center;
+    }
+
+    .img-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -30,8 +40,18 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    #icons-link{
+    #icons-link {
         margin-left: 35%;
     }
-}
 
+    .title {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .img-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

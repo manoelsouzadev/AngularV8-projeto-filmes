@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     }
 
     getFilmes() {
-        this.sharedService.buscarFilme('avengers').then(res => {
+        this.sharedService.buscarFilme('war').then(res => {
             // console.log(res);
             this.filmes = res.Search;
         });

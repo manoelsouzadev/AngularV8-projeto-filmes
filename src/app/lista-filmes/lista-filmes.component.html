@@ -1,3 +1,4 @@
+<div id="main-div">
 <div
     id="div-margin-bottom"
     class="container-fluid"
@@ -25,7 +26,54 @@
             </div>
         </div>
     </div>
+
+    <div id="nav-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    (click)="previousOrNextPage('start')"
+                    aria-label="Previous"
+                >
+                    <span aria-hidden="true">Início</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    (click)="previousOrNextPage('previous')"
+                    aria-label="Previous"
+                    *ngIf="show"
+                >
+                    <span aria-hidden="true">Anterior</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    (click)="previousOrNextPage('next')"
+                    aria-label="Next"
+                    *ngIf="show"
+                >
+                    <span aria-hidden="true">Próxima</span>
+                </a>
+            </li>
+            <li class="page-item">
+                    <a
+                        class="page-link"
+                        (click)="previousOrNextPage('end')"
+                        aria-label="Previous"
+                    >
+                        <span aria-hidden="true">Final</span>
+                    </a>
+                </li>
+        </ul>
+    </nav>
 </div>
+</div>
+</div>
+
 <app-footer *ngIf="filmes"></app-footer>
 <ng-template #loading>
     <spinner-load></spinner-load>
