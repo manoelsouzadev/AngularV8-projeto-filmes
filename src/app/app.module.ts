@@ -11,7 +11,7 @@ import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { SharedModule } from './shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
-import { QuemSouComponent } from './quem-sou/quem-sou.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -24,7 +24,7 @@ import { FilmeNaoEncontradoComponent } from './filme-nao-encontrado/filme-nao-en
         FilmeDetalhesComponent,
         ListaFilmesComponent,
         NavbarComponent,
-        QuemSouComponent,
+        SobreComponent,
         FooterComponent,
         FilmeNaoEncontradoComponent
     ],

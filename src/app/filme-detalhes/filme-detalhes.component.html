@@ -1,4 +1,4 @@
-<div id="div-margin-bottom"  *ngIf="detalhesFilme; else loading">
+<div id="div-margin-bottom"  *ngIf="detalhesFilme; else loading"> 
     <div *ngFor="let filme of detalhesFilme">
         <div class="container">
             <div class="row">
@@ -21,7 +21,6 @@
                     <p style="text-align: justify; margin-top: 15px;">
                         {{ filme.Plot }}
                     </p>
-                    <!-- <p>{{ filme.imdbRating }}</p> -->
 
                     <star-rating [ratingValue]="filme.imdbRating"></star-rating>
                 </div>

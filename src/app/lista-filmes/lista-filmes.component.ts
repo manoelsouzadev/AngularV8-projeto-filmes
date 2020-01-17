@@ -33,6 +33,9 @@ export class ListaFilmesComponent implements OnInit {
         });
     }
 
+    scroll(el: HTMLElement) {
+        el.scrollIntoView();
+    }
     // async getFilmes() {
     //     // this.sharedService.buscarFilme(this.search).then(res => {
     //     //      console.log('promise'+ res);
@@ -51,20 +54,22 @@ export class ListaFilmesComponent implements OnInit {
         //     console.log(res);
         // });
 
-        this.sharedService.buscarFilmeOther(this.search).subscribe((res: any) => {
-            this.filmes = res.Search;
-            if (
-                res.Search === "" ||
-                res.Search === undefined ||
-                res.Search === null
-            ) {
-                this.router.navigate(["/nao-encontrado"]);
-                setTimeout(() => {
-                    this.router.navigate(["/"]);
-                }, 5000);
-            }
-            this.setTotal(res.totalResults);
-        });
+        this.sharedService
+            .buscarFilmeOther(this.search)
+            .subscribe((res: any) => {
+                this.filmes = res.Search;
+                if (
+                    res.Search === "" ||
+                    res.Search === undefined ||
+                    res.Search === null
+                ) {
+                    this.router.navigate(["/nao-encontrado"]);
+                    setTimeout(() => {
+                        this.router.navigate(["/"]);
+                    }, 5000);
+                }
+                this.setTotal(res.totalResults);
+            });
         //  console.log("total: " + this.total);
         //this.homeService.returnRes(this.search).pipe( map((value: any) => this.onConsole( value.totalResults))).subscribe(res => console.log(res))
         // this.homeService.returnRes(this.search).subscribe((res:any) => console.log(res.Search, res.totalResults))

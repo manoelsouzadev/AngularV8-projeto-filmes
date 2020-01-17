@@ -1,20 +1,20 @@
-<div id="main-div">
-<div
-    id="div-margin-bottom"
-    class="container-fluid"
-    *ngIf="filmes; else loading"
->
-    <div class="row">
-        <div class="col-2 col-number" *ngFor="let filme of filmes">
-            <div
-                class="card-transform text-center"
-                id="card-filme"
-                (click)="filmeDetalhes(filme.imdbID)"
-            >
-                <img [src]="filme.Poster" class="card-img-top" />
-                <div class="card-body">
-                    <small class="card-title">{{ filme.Title }}</small>
-                    <!--<div>
+<div #main>
+    <div
+        id="div-margin-bottom"
+        class="container-fluid"
+        *ngIf="filmes; else loading"
+    >
+        <div class="row">
+            <div class="col-2 col-number" *ngFor="let filme of filmes">
+                <div
+                    class="card-transform text-center"
+                    id="card-filme"
+                    (click)="filmeDetalhes(filme.imdbID)"
+                >
+                    <img [src]="filme.Poster" class="card-img-top" />
+                    <div class="card-body">
+                        <small class="card-title">{{ filme.Title }}</small>
+                        <!--<div>
                         <a
                             (click)="filmeDetalhes(filme.imdbID)"
                             class="btn btn-primary"
@@ -22,56 +22,75 @@
                             >Ver mais</a
                         >
                     </div>-->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="nav-center">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a
-                    class="page-link"
-                    (click)="previousOrNextPage('start')"
-                    aria-label="Previous"
+        <div id="nav-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a
+                            class="page-link cursor"
+                            (click)="previousOrNextPage('start')"
+                            aria-label="Previous"
+                        >
+                            <span aria-hidden="true">Início</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link cursor"
+                            (click)="previousOrNextPage('previous')"
+                            aria-label="Previous"
+                            *ngIf="show"
+                        >
+                            <span aria-hidden="true">Anterior</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link cursor"
+                            (click)="previousOrNextPage('next')"
+                            aria-label="Next"
+                            *ngIf="show"
+                        >
+                            <span aria-hidden="true">Próxima</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link cursor"
+                            (click)="previousOrNextPage('end')"
+                            aria-label="Previous"
+                        >
+                            <span aria-hidden="true">Final</span>
+                        </a>
+                    </li>
+                </ul>
+               
+                <svg
+                    aria-hidden="true"
+                    color="purple"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="angle-up"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                    class="svg-inline--fa fa-angle-up fa-w-10 fa-3x"
+                    style="width: 45px; height: 45px; display: block; margin: 0 auto;"
                 >
-                    <span aria-hidden="true">Início</span>
-                </a>
-            </li>
-            <li class="page-item">
-                <a
-                    class="page-link"
-                    (click)="previousOrNextPage('previous')"
-                    aria-label="Previous"
-                    *ngIf="show"
-                >
-                    <span aria-hidden="true">Anterior</span>
-                </a>
-            </li>
-            <li class="page-item">
-                <a
-                    class="page-link"
-                    (click)="previousOrNextPage('next')"
-                    aria-label="Next"
-                    *ngIf="show"
-                >
-                    <span aria-hidden="true">Próxima</span>
-                </a>
-            </li>
-            <li class="page-item">
-                    <a
-                        class="page-link"
-                        (click)="previousOrNextPage('end')"
-                        aria-label="Previous"
-                    >
-                        <span aria-hidden="true">Final</span>
-                    </a>
-                </li>
-        </ul>
-    </nav>
-</div>
-</div>
+                    <path
+                        fill="currentColor"
+                        d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                        class=""
+                    ></path>
+                </svg>
+            </nav>
+        </div>
+    </div>
 </div>
 
 <app-footer *ngIf="filmes"></app-footer>
