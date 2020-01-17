@@ -43,7 +43,7 @@ export class SharedService {
     //     );
     // }
 
-    buscarFilmeOther(name: string, pageNumber?) {
+    buscarFilmeOther(name: string, pageNumber?): any {
         if (pageNumber != null) {
             return this.http.get(`${this.API}&s=${name}&page=${pageNumber}`);
         } else {

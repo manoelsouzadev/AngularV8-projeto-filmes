@@ -10,7 +10,7 @@ export class SobreComponent implements OnInit {
 
     ngOnInit() {}
 
-    scroll(el: HTMLElement) {
+    scroll(el: HTMLElement): void {
         el.scrollIntoView();
     }
 }

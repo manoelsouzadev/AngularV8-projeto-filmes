@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
         });
     }
 
-    getFilmes() {
+    getFilmes(): any {
         if (this.form.valid) {
             this.router.navigate(["lista-filmes"], {
                 queryParams: { search: this.form.get("nome").value }

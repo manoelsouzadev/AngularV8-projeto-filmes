@@ -8,9 +8,9 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class StarRatingComponent implements OnInit {
     public form: FormGroup;
-    @Input() ratingValue: string;
     public rating: number;
-
+    @Input() ratingValue: string;
+    
     constructor(private fb: FormBuilder) {}
 
     ngOnInit() {
@@ -19,7 +19,7 @@ export class StarRatingComponent implements OnInit {
         });
     }
 
-    getRating() {
+    getRating(): number {
         if (this.ratingValue > "5") {
             return (this.rating = parseInt(this.ratingValue) / 2);
         } else {

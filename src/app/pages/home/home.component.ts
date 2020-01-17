@@ -17,17 +17,17 @@ export class HomeComponent implements OnInit {
         this.getFilmes();
     }
 
-    getFilmes() {
+    getFilmes(): void {
         this.sharedService.buscarFilme("war").then(res => {
             this.filmes = res.Search;
         });
     }
 
-    scroll(el: HTMLElement) {
-        el.scrollIntoView();
+    filmeDetalhes(id: string): void {
+        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id } });
     }
 
-    filmeDetalhes(id: string) {
-        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id } });
+    scroll(el: HTMLElement): void {
+        el.scrollIntoView();
     }
 }

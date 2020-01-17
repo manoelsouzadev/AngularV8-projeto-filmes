@@ -30,11 +30,7 @@ export class ListaFilmesComponent implements OnInit {
         });
     }
 
-    scroll(el: HTMLElement) {
-        el.scrollIntoView();
-    }
-
-    getFilmes() {
+    getFilmes(): void {
         // this.homeService.buscarFilme(this.search).subscribe(res => {
         //     this.filmes = res;
         //     console.log(res);
@@ -63,12 +59,15 @@ export class ListaFilmesComponent implements OnInit {
         // console.log(this.homeService.returnTotal().subscribe(res => console.log(res)));
     }
 
-    setTotal(value) {
+    setTotal(value): void {
         this.total = value;
-        console.log("setTotal: " + this.total);
     }
 
-    previousOrNextPage(direction) {
+    filmeDetalhes(id: string): void {
+        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id } });
+    }
+
+    previousOrNextPage(direction): any {
         let per = Math.ceil(this.total / 10);
         if (direction === "start") {
             this.show = true;
@@ -116,7 +115,7 @@ export class ListaFilmesComponent implements OnInit {
         }
     }
 
-    filmeDetalhes(id: string) {
-        this.router.navigate(["/filme-detalhes"], { queryParams: { id: id } });
+    scroll(el: HTMLElement): void {
+        el.scrollIntoView();
     }
 }
