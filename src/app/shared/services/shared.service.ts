@@ -1,7 +1,7 @@
 import { environment } from "./../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { delay, map } from "rxjs/operators";
+import { delay } from "rxjs/operators";
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -43,12 +43,9 @@ export class SharedService {
     //     );
     // }
 
-
-
     buscarFilmeOther(name: string, pageNumber?) {
         if (pageNumber != null) {
-            return this.http
-                .get(`${this.API}&s=${name}&page=${pageNumber}`);
+            return this.http.get(`${this.API}&s=${name}&page=${pageNumber}`);
         } else {
             return this.http.get(`${this.API}&s=${name}`);
         }

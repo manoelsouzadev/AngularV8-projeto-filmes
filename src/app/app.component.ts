@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
     protected form: FormGroup;
@@ -19,8 +19,8 @@ export class AppComponent {
     }
 
     getFilmes() {
-        this.router.navigate(['home'], {
-            queryParams: { search: this.form.get('nome').value }
+        this.router.navigate(["home"], {
+            queryParams: { search: this.form.get("nome").value }
         });
     }
 }

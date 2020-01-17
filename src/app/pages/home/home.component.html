@@ -1,0 +1,74 @@
+<div
+    #main
+    id="div-margin-bottom"
+    class="container-fluid"
+    *ngIf="filmes; else loading"
+>
+    <div id="carousel-div">
+        <div class="py-5 text-center">
+            <img
+                class="d-block mx-auto mb-4"
+                src="/assets/img/main-logo3.svg"
+                alt=""
+                width="72"
+                height="72"
+            />
+            <h2>Filmes DB</h2>
+            <p class="lead">Fique por dentro das novidades cinematográficas!</p>
+        </div>
+    </div>
+
+    <h3 style="text-align: center; margin-bottom: 50px;">
+        Encontre detalhes do seu filme favorito aqui!
+    </h3>
+    <div class="row">
+        <div class="col-2 col-number" *ngFor="let filme of filmes">
+            <div
+                class="card-transform text-center"
+                id="card-filme"
+                (click)="filmeDetalhes(filme.imdbID)"
+            >
+                <img [src]="filme.Poster" class="card-img-top" />
+                <div class="card-body">
+                    <small class="card-title show-title">{{
+                        filme.Title
+                    }}</small>
+
+                    <!-- <a
+                            (click)="filmeDetalhes(filme.imdbID)"
+                            class="btn btn-primary btn-sm"
+                            id="btn-filme-detalhe"
+                            >Ver mais</a
+                        >-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <svg
+        aria-hidden="true"
+        color="purple"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="angle-double-up"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"
+        class="svg-inline--fa fa-angle-double-up fa-w-10 fa-3x cursor-pointer"
+        style="width: 40px; height: 40px; margin-left: 10px; display: block; margin: 0 auto;"
+        (click)="scroll(main)"
+        *ngIf="filmes"
+    >
+        <path
+            fill="currentColor"
+            d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"
+            class=""
+        ></path>
+    </svg>
+</div>
+
+<app-footer *ngIf="filmes"></app-footer>
+
+<ng-template #loading>
+    <spinner-load></spinner-load>
+</ng-template>
