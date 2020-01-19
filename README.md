@@ -9,8 +9,7 @@ Aplicação para mostar deralhes de filmes.
 ~~~javascript
 export const environment = {
   production: true,
-  API: 'Sua API OMDB aqui'
-  
+  API: 'Sua string de conexão a API OMDB aqui'//Para adquirir essa string de conexão acesse: http://www.omdbapi.com/
 }
 ~~~
-3. Rode a aplicação com o comando **ng serve** ou **npm start** 
+3. Rode a aplicação com o comando **ng serve** ou **npm start** ou acessa a aplicação na seguinte URL: https://filmesdbase.firebaseapp.com
