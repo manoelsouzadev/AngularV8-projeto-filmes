@@ -1,8 +1,8 @@
 # Projeto Filmes Angular
 
-Aplicação para mostar deralhes de filmes.
+Aplicação para mostar detalhes de filmes e séries.
 
-**Siga os passos abaixo:**
+**Para rodar a aplicação siga os passos abaixo:**
 
 1. Crie uma pasta **environments** na pasta **src**.
 2. Dentro da pasta **environments**, crie um arquivo chamado **environment.ts**.**Com a estrutura abaixo:**
