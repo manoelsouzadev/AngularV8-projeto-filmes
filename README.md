@@ -19,3 +19,4 @@ ou Acesse a aplicação na seguinte URL: https://filmesdbase.firebaseapp.com
 **Tecnologias utilizadas:**
 * Angular
 * Bootstrap
+* OMDb API
