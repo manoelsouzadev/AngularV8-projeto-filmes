@@ -1,6 +1,6 @@
 {
-  "name": "projeto-filmes",
-  "short_name": "projeto-filmes",
+  "name": "FilmesDB",
+  "short_name": "FilmesDB",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
