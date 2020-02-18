@@ -21,38 +21,9 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
-
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
+.info {
+  font-family: "Patua One", cursive;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  margin-bottom: 50px;
 }
 
-.topnav a:hover {
-  border-bottom: 3px solid #f5560c;;
-}
-
-.topnav a.active {
-  border-bottom: 3px solid rgb(0, 148, 25);
-}
-
-.disable-active{
-  .non-active{
-    border-bottom: none;
-  }
-}

@@ -62,3 +62,37 @@
        visibility: visible;
     }
 }
+a{
+    text-align: center;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: rgb(32, 31, 31);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    border-bottom: 3px solid #f5560c;;
+  }
+  
+  .topnav a.active {
+    border-bottom: 3px solid rgb(0, 148, 25);
+  }
+  
+  .disable-active{
+    .non-active{
+      border-bottom: none;
+    }
+  }

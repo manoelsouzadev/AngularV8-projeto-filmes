@@ -12,7 +12,14 @@
     padding: 10px;
     border-radius: 5px;
     //background-color: rgba(0, 0, 0, 0.8);
-    background-image: linear-gradient(to right, #0c479f, #3445b0, #583fbd, #7c32c6, #a00bc9);
+    background-image: linear-gradient(
+        to right,
+        #0c479f,
+        #3445b0,
+        #583fbd,
+        #7c32c6,
+        #a00bc9
+    );
     color: #fff;
 }
 .border {
@@ -24,10 +31,25 @@
     position: relative;
 }
 
+.back-to-top, a{
+    margin-right: 5px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
 
-
-
-
-
-
-
+    .back-to-top2 {
+        position: fixed;
+        display: none;
+        background: #007bff;
+        color: #fff;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 1;
+        font-size: 16px;
+        border-radius: 50%;
+        right: 15px;
+        bottom: 15px;
+        transition: background 0.5s;
+        z-index: 11;
+}

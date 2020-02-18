@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 1260px) {
     .col-number {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
@@ -7,12 +7,6 @@
         margin-left: 88%;
     }
     .hidden-class{
-        display: none;
-    }
-    .show-desktop{
-        display: block;
-    }
-    .hidden-mobile{
         display: none;
     }
 }
@@ -63,9 +57,6 @@
         display: none;
     }
     .show{
-        display: block;
-    }
-    .show-mobile{
         display: block;
     }
 }
