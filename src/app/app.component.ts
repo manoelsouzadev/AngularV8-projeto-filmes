@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -9,7 +9,6 @@ import { Router } from "@angular/router";
 })
 export class AppComponent {
     protected form: FormGroup;
-
     constructor(private formBuilder: FormBuilder, private router: Router) {}
 
     ngOnInit() {
@@ -23,4 +22,6 @@ export class AppComponent {
             queryParams: { search: this.form.get("nome").value }
         });
     }
+
+   
 }

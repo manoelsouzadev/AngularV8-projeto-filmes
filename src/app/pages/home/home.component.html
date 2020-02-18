@@ -4,7 +4,7 @@
     class="container-fluid"
     *ngIf="filmes; else loading"
 >
-    <div id="carousel-div">
+    <div id="carousel-div" class="hidden-class">
         <div class="py-5 text-center">
             <img
                 class="d-block mx-auto mb-4"
@@ -13,12 +13,12 @@
                 width="72"
                 height="72"
             />
-            <h2>Filmes DB</h2>
+            <!-- <h2>Filmes DB</h2> -->
             <p class="lead">Fique por dentro das novidades cinematográficas!</p>
         </div>
     </div>
 
-    <h3 style="text-align: center; margin-bottom: 50px;">
+    <h3 class="hidden-class" style="text-align: center; margin-bottom: 50px;">
         Encontre detalhes das suas séries, e filmes favoritos!
     </h3>
     <div class="row">

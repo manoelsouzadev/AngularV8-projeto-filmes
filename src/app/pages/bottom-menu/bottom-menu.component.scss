@@ -9,11 +9,9 @@
     .hidden-class{
         display: none;
     }
-    .show-desktop{
-        display: block;
-    }
-    .hidden-mobile{
-        display: none;
+    
+    .show{
+        visibility: hidden;
     }
 }
 
@@ -59,13 +57,8 @@
     .hidden-class{
         display: none;
     }
-    .hidden-desktop{
-        display: none;
-    }
+
     .show{
-        display: block;
-    }
-    .show-mobile{
-        display: block;
+       visibility: visible;
     }
 }

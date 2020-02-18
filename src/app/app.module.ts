@@ -16,6 +16,7 @@ import { FooterComponent } from "./pages/footer/footer.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { FilmeNaoEncontradoComponent } from "./pages/filme-nao-encontrado/filme-nao-encontrado.component";
+import { BottomMenuComponent } from './pages/bottom-menu/bottom-menu.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { FilmeNaoEncontradoComponent } from "./pages/filme-nao-encontrado/filme-
         NavbarComponent,
         SobreComponent,
         FooterComponent,
-        FilmeNaoEncontradoComponent
+        FilmeNaoEncontradoComponent,
+        BottomMenuComponent
     ],
     imports: [
         BrowserModule,
