@@ -31,25 +31,9 @@
     position: relative;
 }
 
-.back-to-top, a{
+.back-to-top,
+a {
     margin-right: 5px;
     text-decoration: none;
     text-decoration-line: none;
-}
-
-    .back-to-top2 {
-        position: fixed;
-        display: none;
-        background: #007bff;
-        color: #fff;
-        width: 44px;
-        height: 44px;
-        text-align: center;
-        line-height: 1;
-        font-size: 16px;
-        border-radius: 50%;
-        right: 15px;
-        bottom: 15px;
-        transition: background 0.5s;
-        z-index: 11;
 }
