@@ -1,15 +1,29 @@
-<div class="show"  style="visibility: hidden;">
-<div class="topnav show" style="font-family: 'Fredoka One', cursive; padding: 3px;">
-    <div class="row">
-    <div class="col-4">
-        <a  [routerLink]="['/']" routerLinkActive="router-link-active"  id="home" (click)="addClass()">Home</a>
-      </div>
-      <div class="col-4">
-        <a [routerLink]="['/sobre']" routerLinkActive="router-link-active" (click)="removeClass()">Sobre</a>
-      </div>
-      <div class="col-4">
-        <a   href="http://www.omdbapi.com/" target="_blank">API</a>
-      </div>
+<div class="show" style="visibility: hidden;">
+    <div
+        class="topnav show"
+        style="font-family: 'Fredoka One', cursive; padding: 3px;"
+    >
+        <div class="row">
+            <div class="col-4">
+                <a
+                    [routerLink]="['/']"
+                    routerLinkActive="router-link-active"
+                    id="home"
+                    (click)="addClass()"
+                    >Home</a
+                >
+            </div>
+            <div class="col-4">
+                <a
+                    [routerLink]="['/sobre']"
+                    routerLinkActive="router-link-active"
+                    (click)="removeClass()"
+                    >Sobre</a
+                >
+            </div>
+            <div class="col-4">
+                <a href="http://www.omdbapi.com/" target="_blank">API</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

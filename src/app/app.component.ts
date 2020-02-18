@@ -17,11 +17,9 @@ export class AppComponent {
         });
     }
 
-    getFilmes() {
+    getFilmes(): void {
         this.router.navigate(["home"], {
             queryParams: { search: this.form.get("nome").value }
         });
     }
-
-   
 }
