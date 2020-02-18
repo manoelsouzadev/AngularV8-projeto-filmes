@@ -17,6 +17,8 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { FilmeNaoEncontradoComponent } from "./pages/filme-nao-encontrado/filme-nao-encontrado.component";
 import { BottomMenuComponent } from './pages/bottom-menu/bottom-menu.component';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 @NgModule({
     declarations: [
@@ -37,6 +39,8 @@ import { BottomMenuComponent } from './pages/bottom-menu/bottom-menu.component';
         ReactiveFormsModule,
         SharedModule,
         NgxStarRatingModule,
+        NgxPageScrollModule,
+        NgxPageScrollCoreModule,
         ServiceWorkerModule.register("ngsw-worker.js", {
             enabled: environment.production
         })

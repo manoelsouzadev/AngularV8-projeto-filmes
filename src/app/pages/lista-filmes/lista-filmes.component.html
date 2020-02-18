@@ -1,4 +1,4 @@
-<div #main>
+<div #main id="main-div">
     <div
         id="div-margin-bottom"
         class="container-fluid"
@@ -70,8 +70,10 @@
                     </li>
                 </ul>
                 <svg
+                    pageScroll 
+                    href="#main-div"
                     aria-hidden="true"
-                    color="purple"
+                    color="#f45725"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="angle-double-up"
@@ -80,7 +82,7 @@
                     viewBox="0 0 320 512"
                     class="svg-inline--fa fa-angle-double-up fa-w-10 fa-3x cursor-pointer"
                     style="width: 40px; height: 40px; margin-left: 10px; display: block; margin: 0 auto 30px auto;"
-                    (click)="scroll(main)"
+                    
                     *ngIf="filmes"
                 >
                     <path
@@ -91,9 +93,6 @@
                 </svg>
             </nav>
         </div>
-        <p class="float-right back-to-top" style="margin-bottom: 5px;">
-            <a href="#">Voltar ao topo</a>
-        </p>
     </div>
 </div>
 

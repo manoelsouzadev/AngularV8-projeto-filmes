@@ -1,3 +1,4 @@
+<div id="main-div">
 <div
     #main
     id="div-margin-bottom"
@@ -43,12 +44,13 @@
                 </div>
             </div>
         </div>
-        
+        <!-- Further content here -->
     </div>
-   
     <svg
+        pageScroll 
+        href="#main-div"
         aria-hidden="true"
-        color="purple"
+        color="#f45725"
         focusable="false"
         data-prefix="fas"
         data-icon="angle-double-up"
@@ -57,7 +59,7 @@
         viewBox="0 0 320 512"
         class="svg-inline--fa fa-angle-double-up fa-w-10 fa-3x cursor-pointer"
         style="width: 40px; height: 40px; margin-left: 10px; display: block; margin: 0 auto 60px auto;"
-        (click)="scroll(main)"
+        
         *ngIf="filmes"
     >
         <path
@@ -67,9 +69,12 @@
         ></path>
     </svg>
 </div>
-
+</div>
 <app-footer *ngIf="filmes"></app-footer>
 
 <ng-template #loading>
     <spinner-load></spinner-load>
 </ng-template>
+
+
+
