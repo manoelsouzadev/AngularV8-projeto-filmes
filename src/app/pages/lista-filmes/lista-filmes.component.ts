@@ -77,6 +77,7 @@ export class ListaFilmesComponent implements OnInit {
                     this.filmes = res.Search;
                     this.setTotal(res.totalResults);
                 });
+               
         }
         if (direction === "end") {
             this.show = false;
@@ -86,6 +87,7 @@ export class ListaFilmesComponent implements OnInit {
                     this.filmes = res.Search;
                     this.setTotal(res.totalResults);
                 });
+                
         }
         if (direction === "previous") {
             this.show = true;
