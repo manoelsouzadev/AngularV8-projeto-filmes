@@ -25,7 +25,7 @@ export class BottomMenuComponent implements OnInit {
     //        tag.style.color = "#ff0000";
     //     }
 
-    mostrarAtivo(tag) {
+    mostrarAtivo(tag): void {
         //var tag_li = document.getElementById('lista_menu');
         var tag_a = document.getElementsByTagName("a");
         for (let i = 0; i < tag_a.length; i++) {

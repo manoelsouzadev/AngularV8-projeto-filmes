@@ -21,7 +21,8 @@ export class StarRatingComponent implements OnInit {
 
     getRating(): number {
         if (this.ratingValue > "5") {
-            return (this.rating = parseInt(this.ratingValue) / 2);
+            // return (this.rating = parseInt(this.ratingValue) / 2);
+            return (this.rating = Math.ceil(parseInt(this.ratingValue) / 2));
         } else {
             return parseInt(this.ratingValue);
         }
