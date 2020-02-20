@@ -10,9 +10,9 @@
         display: none;
     }
 
-    .show {
-        visibility: hidden;
-    }
+    // .show {
+    //     visibility: hidden;
+    // }
 }
 
 @media (width: 768px) {
@@ -37,7 +37,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .col-number {
         flex: 0 0 100%;
         max-width: 100%;
@@ -78,9 +78,9 @@ a {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 6px 6px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .topnav a:hover {
@@ -88,7 +88,7 @@ a {
 }
 
 .topnav a.active {
-    border-bottom: 3px solid rgb(0, 148, 25);
+    border-bottom: 3px solid #f5560c;
 }
 
 .disable-active {

@@ -42,12 +42,18 @@
     }
 
     .btn-search {
-        margin-left: 93%;
+        margin-left: 87%;
     }
 
     .input-search {
         margin-bottom: 6px;
-        font-family: "Patua One", cursive;
+        font-family: "Patua One", sans-serif;
         width: 100%;
     }
 }
+
+.btn-border, .btn-border:hover{
+    border: none;
+    outline: none;
+}
+

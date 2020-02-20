@@ -11,14 +11,26 @@ export class BottomMenuComponent implements OnInit {
 
     ngOnInit() {
         this.home = document.getElementById("home");
+        let linkHome = (document.getElementById("linkHome").style.borderBottom =
+            "3px solid #f5560c");
     }
 
-    addClass() {
-        this.home.classList.add("active");
-    }
+    // mostrarAtivo(tag){
+    //     //var tag_li = document.getElementById('lista_menu');
+    //     var tag_a = document.getElementsByTagName('a');
+    //     for (let i=0; i<tag_a.length; i++ )
+    //     {
+    //        tag_a[i].style.color = "";
+    //     }
+    //        tag.style.color = "#ff0000";
+    //     }
 
-    removeClass() {
-        console.log(this.home);
-        this.home.style.borderColor = "blue";
+    mostrarAtivo(tag) {
+        //var tag_li = document.getElementById('lista_menu');
+        var tag_a = document.getElementsByTagName("a");
+        for (let i = 0; i < tag_a.length; i++) {
+            tag_a[i].style.borderBottomColor = "#201f1f";
+        }
+        tag.style.borderBottomColor = "#f5560c";
     }
 }
