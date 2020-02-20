@@ -12,7 +12,7 @@ export class BottomMenuComponent implements OnInit {
     ngOnInit() {
         this.home = document.getElementById("home");
         let linkHome = (document.getElementById("linkHome").style.borderBottom =
-            "3px solid #f5560c");
+            "3px solid #030181");
     }
 
     // mostrarAtivo(tag){
@@ -31,6 +31,6 @@ export class BottomMenuComponent implements OnInit {
         for (let i = 0; i < tag_a.length; i++) {
             tag_a[i].style.borderBottomColor = "#201f1f";
         }
-        tag.style.borderBottomColor = "#f5560c";
+        tag.style.borderBottomColor = "#030181";
     }
 }

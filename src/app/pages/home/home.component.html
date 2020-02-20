@@ -6,7 +6,7 @@
         *ngIf="filmes; else loading"
     >
         <div id="carousel-div" class="hidden-class">
-            <div class="py-5 text-center">
+            <!-- <div class="py-5 text-center">
                 <img
                     class="d-block mx-auto mb-4"
                     src="/assets/img/main-logo3.svg"
@@ -15,10 +15,31 @@
                     height="72"
                 />
                 <!-- <h2>Filmes DB</h2> -->
-                <p class="lead info">
+            <!-- <p class="lead info">
                     Fique por dentro das novidades cinematográficas!
-                </p>
+                </p> -->
+            <div class="row">
+                <div class="col">
+                    <img
+                        id="main-img"
+                        src="../../../assets/img/montagem-filmes.jpg"
+                    />
+                </div>
+                <div class="col py-5 text-center">
+                    <img
+                        class="d-block mx-auto mb-4"
+                        src="/assets/img/main-logo3.svg"
+                        alt=""
+                        width="72"
+                        height="72"
+                    />
+                    <p class="lead info">
+                        Fique por dentro das novidades cinematográficas!
+                    </p>
+                </div>
             </div>
+
+            <!-- </div> -->
         </div>
 
         <h3 class="hidden-class info">
@@ -53,7 +74,7 @@
             pageScroll
             href="#main-div"
             aria-hidden="true"
-            color="#f45725"
+            color="#030181"
             focusable="false"
             data-prefix="fas"
             data-icon="angle-double-up"

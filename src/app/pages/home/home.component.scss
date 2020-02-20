@@ -12,25 +12,15 @@
     padding: 10px;
     border-radius: 5px;
     //background-color: rgba(0, 0, 0, 0.8);
-    background-image: linear-gradient(
-        to right,
-        #0c479f,
-        #3445b0,
-        #583fbd,
-        #7c32c6,
-        #a00bc9
-    );
+    background-color: rgb(32, 31, 31);
     color: #fff;
 }
 .border {
     border-radius: 20px;
 }
-.round-container {
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
+#main-img{
+    border-radius: 8px;
 }
-
 .back-to-top,
 a {
     margin-right: 5px;
