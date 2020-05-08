@@ -19,3 +19,14 @@
 .cursor {
     cursor: pointer;
 }
+
+#align-result{
+    display: flex; 
+    flex-direction: row-reverse;
+}
+
+i{
+    padding: 10px;
+   // color: #000;
+    font-weight: 600;
+}

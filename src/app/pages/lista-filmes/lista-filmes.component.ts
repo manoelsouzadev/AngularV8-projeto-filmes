@@ -6,7 +6,7 @@ import { SharedService } from "../../shared/services/shared.service";
 @Component({
     selector: "lista-filmes",
     templateUrl: "./lista-filmes.component.html",
-    styleUrls: ["./lista-filmes.component.scss"]
+    styleUrls: ["./lista-filmes.component.scss"],
 })
 export class ListaFilmesComponent implements OnInit {
     public filmes: any[];
@@ -14,6 +14,7 @@ export class ListaFilmesComponent implements OnInit {
     private total: number;
     private currentPage: number = 1;
     public show: boolean = true;
+    public totalResults: number;
 
     constructor(
         private route: ActivatedRoute,
@@ -40,6 +41,7 @@ export class ListaFilmesComponent implements OnInit {
             .buscarFilmeOther(this.search)
             .subscribe((res: any) => {
                 this.filmes = res.Search;
+                this.totalResults = res.totalResults;
                 if (
                     res.Search === "" ||
                     res.Search === undefined ||
@@ -70,6 +72,7 @@ export class ListaFilmesComponent implements OnInit {
     previousOrNextPage(direction): any {
         let per = Math.ceil(this.total / 10);
         if (direction === "start") {
+            this.currentPage = 1;
             this.show = true;
             this.sharedService
                 .buscarFilmeOther(this.search, 1)

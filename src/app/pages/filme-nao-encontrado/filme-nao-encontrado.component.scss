@@ -3,19 +3,31 @@
     margin-bottom: 50px;
     font-family: "Patua One", sans-serif;
 }
-.round-container {
-    width: 19rem;
-    height: 19rem;
-    align-self: center;
-    margin: 3rem auto 2rem auto;
-    overflow: hidden;
-    position: relative;
+// .round-container {
+//     width: 19rem;
+//     height: 19rem;
+//     align-self: center;
+//     margin: 3rem auto 2rem auto;
+//     overflow: hidden;
+//     position: relative;
+// }
+// .round-container img {
+//     width: initial;
+//     height: inherit;
+//     max-width: none;
+//     position: absolute;
+//     left: 50%;
+//     transform: translateX(-50%);
+// }
+
+.animation-center {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.round-container img {
-    width: initial;
-    height: inherit;
-    max-width: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+
+.animation-center .internal {
+    width: 200px; /* Valor da Largura do elemento */
 }

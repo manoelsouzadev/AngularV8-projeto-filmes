@@ -20,6 +20,12 @@ import { FilmeNaoEncontradoComponent } from "./pages/filme-nao-encontrado/filme-
 import { BottomMenuComponent } from "./pages/bottom-menu/bottom-menu.component";
 import { NgxPageScrollModule } from "ngx-page-scroll";
 import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
+import { LottieAnimationViewModule } from 'ng-lottie'; 
+import { LottieModule } from 'ngx-lottie';
+ 
+export function playerFactory() {
+  return import('lottie-web');
+}
 
 @NgModule({
     declarations: [
@@ -42,6 +48,11 @@ import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
         NgxStarRatingModule,
         NgxPageScrollModule,
         NgxPageScrollCoreModule,
+        LottieAnimationViewModule.forRoot(),
+        LottieModule.forRoot({
+            player: playerFactory,
+            useCache: true,
+          }),
         ServiceWorkerModule.register("ngsw-worker.js", {
             enabled: environment.production
         })
