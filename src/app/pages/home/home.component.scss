@@ -1,27 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
 #float-right {
     float: right;
 }
+
 #card-filme {
     margin-bottom: 20px;
 }
-#btn-filme-detalhe { 
+
+#btn-filme-detalhe {
     color: #fff;
 }
+
 #carousel-div {
     margin-bottom: 30px;
-   
+
     border-radius: 5px;
     //background-color: rgba(0, 0, 0, 0.8);
     background-color: #201f1f;
     color: #fff;
 }
+
 .border {
     border-radius: 20px;
 }
-#main-img{
+
+#main-img {
     border-radius: 8px;
 }
+
 .back-to-top,
 a {
     margin-right: 5px;

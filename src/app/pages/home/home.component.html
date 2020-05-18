@@ -1,9 +1,5 @@
 <div id="main-div" #main>
-    <div
-        #main
-        id="div-margin-bottom"
-        *ngIf="filmes; else loading"
-    >
+    <div #main id="div-margin-bottom" *ngIf="filmes; else loading">
         <div id="carousel-div" class="hidden-class" style="margin-top: -50px;">
             <!-- <div class="py-5 text-center">
                 <img
@@ -51,19 +47,28 @@
                     id="card-filme"
                     (click)="filmeDetalhes(filme.imdbID)"
                 >
-                    <img [src]="filme.Poster" class="card-img-top" />
-                    <div class="card-body">
-                        <small class="card-title show-title">{{
+                    <img
+                        [src]="filme.Poster"
+                        class="card-img-top"
+                        style="margin-bottom: 20px;"
+                    />
+                    <!-- <div class="card-body" > -->
+                    <!-- <small class="card-title show-title">{{
                             filme.Title
-                        }}</small>
+                        }}</small> -->
 
-                        <!-- <a
+                    <!-- <a
                             (click)="filmeDetalhes(filme.imdbID)"
                             class="btn btn-primary btn-sm"
                             id="btn-filme-detalhe"
                             >Ver mais</a
                         >-->
-                    </div>
+                    <!-- </div> -->
+                    <small
+                        class="card-title show-title"
+                        style="padding-bottom: 10px;"
+                        >{{ filme.Title }}</small
+                    >
                 </div>
             </div>
 
@@ -81,7 +86,13 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 320 512"
             class="svg-inline--fa fa-angle-double-up fa-w-10 fa-3x cursor-pointer"
-            style="width: 40px; height: 40px; margin-left: 10px; display: block; margin: 0 auto 90px auto;"
+            style="
+                width: 40px;
+                height: 40px;
+                margin-left: 10px;
+                display: block;
+                margin: 0 auto 90px auto;
+            "
             *ngIf="filmes"
         >
             <path

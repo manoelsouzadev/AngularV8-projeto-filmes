@@ -4,18 +4,18 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 @Component({
     selector: "star-rating",
     templateUrl: "./star-rating.component.html",
-    styleUrls: ["./star-rating.component.scss"]
+    styleUrls: ["./star-rating.component.scss"],
 })
 export class StarRatingComponent implements OnInit {
     public form: FormGroup;
     public rating: number;
     @Input() ratingValue: string;
-    
+
     constructor(private fb: FormBuilder) {}
 
     ngOnInit() {
         this.form = this.fb.group({
-            rating: [this.getRating(), Validators.required]
+            rating: [this.getRating(), Validators.required],
         });
     }
 

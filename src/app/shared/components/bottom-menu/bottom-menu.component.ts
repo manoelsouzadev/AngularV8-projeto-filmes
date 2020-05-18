@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     selector: "bottom-menu",
     templateUrl: "./bottom-menu.component.html",
-    styleUrls: ["./bottom-menu.component.scss"]
+    styleUrls: ["./bottom-menu.component.scss"],
 })
 export class BottomMenuComponent implements OnInit {
     private home;
@@ -29,7 +29,7 @@ export class BottomMenuComponent implements OnInit {
         //var tag_li = document.getElementById('lista_menu');
         var tag_a = document.getElementsByTagName("a");
         for (let i = 0; i < tag_a.length; i++) {
-            tag_a[i].style.borderBottomColor = "#201f1f";
+            tag_a[i].style.borderBottom = "3px solid #201f1f";
         }
         tag.style.borderBottomColor = "#fff";
     }

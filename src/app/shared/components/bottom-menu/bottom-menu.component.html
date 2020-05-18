@@ -2,32 +2,16 @@
     <div class="topnav show" style="font-weight: bold; padding: 3px;">
         <div class="row">
             <div class="col-4">
-                <a
-                    [routerLink]="['/']"
-                    #linkHome
-                    (click)="mostrarAtivo(linkHome)"
-                    id="linkHome"
-                    ><br />Home</a
-                >
+                <a [routerLink]="['/']" #linkHome (click)="mostrarAtivo(linkHome)" id="linkHome"><br />Home</a>
             </div>
             <div class="col-4">
-                <a
-                    [routerLink]="['/sobre']"
-                    #linkSobre
-                    (click)="mostrarAtivo(linkSobre)"
-                    routerLinkActive="router-link-active"
-                >
-                    <br />Sobre</a
-                >
+                <a [routerLink]="['/sobre']" #linkSobre id="linkSobre" (click)="mostrarAtivo(linkSobre)"
+                    routerLinkActive="router-link-active">
+                    <br />Sobre</a>
             </div>
             <div class="col-4">
-                <a
-                    href="http://www.omdbapi.com/"
-                    target="_blank"
-                    #linkApi
-                    (click)="mostrarAtivo(linkApi)"
-                    ><br />API</a
-                >
+                <a href="http://www.omdbapi.com/" target="_blank" id="linkApi" #linkApi
+                    (click)="mostrarAtivo(linkApi)"><br />API</a>
             </div>
         </div>
     </div>

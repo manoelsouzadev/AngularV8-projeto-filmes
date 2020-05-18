@@ -5,7 +5,7 @@ import { delay } from "rxjs/operators";
 import { Router } from "@angular/router";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: "root",
 })
 export class SharedService {
     private readonly API = environment.API;

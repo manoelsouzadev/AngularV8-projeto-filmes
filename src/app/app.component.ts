@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
     selector: "app-root",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"]
+    styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
     protected form: FormGroup;
@@ -13,13 +13,13 @@ export class AppComponent {
 
     ngOnInit() {
         this.form = this.formBuilder.group({
-            nome: [null, [Validators.required, Validators.minLength(4)]]
+            nome: [null, [Validators.required, Validators.minLength(4)]],
         });
     }
 
     getFilmes(): void {
         this.router.navigate(["home"], {
-            queryParams: { search: this.form.get("nome").value }
+            queryParams: { search: this.form.get("nome").value },
         });
     }
 }

@@ -84,12 +84,8 @@
     </div>
 </nav> -->
 
-<nav class="navbar navbar-dark navbar-expand-md fixed-top" id="navbar-menu">
-    <a
-        class="navbar-brand"
-        [routerLink]="['/']"
-        routerLinkActive="router-link-active"
-    >
+<nav class="navbar navbar-dark navbar-expand-xl fixed-top" id="navbar-menu">
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
         <!-- <img
             src="/assets/img/main-logo3.svg"
             width="36"
@@ -121,37 +117,23 @@
     </button>
 </form> -->
 
-    <button
-        class="navbar-toggler collapsed btn-border"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarsExample01"
-        aria-controls="navbarsExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler collapsed btn-border" type="button" data-toggle="collapse"
+        data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="navbar-collapse collapse" id="navbarsExample01" style="">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link hidden-class" [routerLink]="['/']" id="home"
-                    >Home <span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link hidden-class" [routerLink]="['/']" id="home">Home <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item hidden-class">
-                <a class="nav-link" id="quem_sou" [routerLink]="['/sobre']"
-                    >Sobre</a
-                >
+                <a class="nav-link" id="quem_sou" [routerLink]="['/sobre']">Sobre</a>
             </li>
             <li class="nav-item hidden-class">
-                <a
-                    class="nav-link"
-                    href="http://www.omdbapi.com/"
-                    target="_blank"
-                    >OMDb API</a
-                >
+                <a class="nav-link" href="http://www.omdbapi.com/" target="_blank">OMDb API</a>
             </li>
             <!-- <li class="nav-item dropdown text-color">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -174,23 +156,11 @@
             >
         </li>  -->
         </ul>
-        <form
-            class="form-inline my-2 my-lg-0"
-            [formGroup]="form"
-            id="float-right"
-        >
-            <input
-                class="form-control mr-sm-2 input-search-filmes input-search"
-                formControlName="nome"
-                type="search"
-                placeholder="Pesquisar"
-                aria-label="Search"
-            />
-            <button
-                class="btn btn-outline-primary my-2 my-sm-0 btn-bd-search btn-search"
-                type="submit"
-                (click)="getFilmes()"
-            >
+        <form class="form-inline my-2 my-lg-0" [formGroup]="form" id="float-right">
+            <input class="form-control mr-sm-2 input-search-filmes input-search" formControlName="nome" type="search"
+                placeholder="Pesquisar" aria-label="Search" />
+            <button class="btn btn-outline-primary my-2 my-sm-0 btn-bd-search btn-s" type="submit"
+                (click)="getFilmes()">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </form>

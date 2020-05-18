@@ -3,18 +3,22 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .center-div-tech {
     margin-top: 30px;
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .center {
     text-align: center;
     margin-top: 20px;
 }
+
 .center-button {
     margin: 0 auto;
 }
+
 .round-container {
     width: 15rem;
     height: 15rem;
@@ -24,6 +28,7 @@
     overflow: hidden;
     position: relative;
 }
+
 .round-container img {
     width: initial;
     height: inherit;
@@ -32,3 +37,15 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+
+// ul{
+//     display: block;
+//     margin: 0 auto;
+// }
+
+//  li {
+//     display: inline-block;
+//     padding-right: 5px;
+//     text-align: center;
+// }

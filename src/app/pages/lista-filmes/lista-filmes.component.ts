@@ -40,7 +40,8 @@ export class ListaFilmesComponent implements OnInit {
         this.sharedService
             .buscarFilmeOther(this.search)
             .subscribe((res: any) => {
-                this.filmes = res.Search;
+                this.filmes =  res.Search;
+               // res.Search;
                 this.totalResults = res.totalResults;
                 if (
                     res.Search === "" ||
@@ -83,6 +84,7 @@ export class ListaFilmesComponent implements OnInit {
         }
         if (direction === "end") {
             this.show = false;
+            this.currentPage = this.totalResults;
             this.sharedService
                 .buscarFilmeOther(this.search, per)
                 .subscribe((res: any) => {

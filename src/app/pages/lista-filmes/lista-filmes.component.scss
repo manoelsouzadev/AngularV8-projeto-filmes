@@ -1,13 +1,16 @@
 #float-right {
     float: right;
 }
+
 #card-filme {
     margin-bottom: 20px;
 }
+
 #btn-filme-detalhe {
     margin-top: 20px;
     color: #fff;
 }
+
 #nav-center {
     align-items: center;
     display: flex;
@@ -16,17 +19,18 @@
     justify-content: center;
     margin-top: 55px;
 }
+
 .cursor {
     cursor: pointer;
 }
 
-#align-result{
-    display: flex; 
+#align-result {
+    display: flex;
     flex-direction: row-reverse;
 }
 
-i{
+i {
     padding: 10px;
-   // color: #000;
+    // color: #000;
     font-weight: 600;
 }
