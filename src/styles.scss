@@ -1,16 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import './app/scss/media-queries.scss';
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./app/scss/media-queries.scss";
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
 
 .card-transform:hover {
   color: #fff;
   background-color: rgb(48, 48, 48);
   transform: scale(1.05);
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   cursor: pointer;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 8px;
+  .image:hover {
+    border-radius: 8px;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+  }
 }
 
 #div-margin-bottom {
@@ -18,7 +23,7 @@
 }
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: #e0e3e6;
 }
 
@@ -38,4 +43,16 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.dimensions {
+  max-width: 310px;
+  max-height: 210px;
+  width: 100%;
+}
+
+.format-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
