@@ -1,12 +1,16 @@
 <div id="main-div" #main name="top">
     <div #main id="div-margin-bottom" *ngIf="filmes; else loading">
-        <div id="carousel-div" class="hidden-class" style="margin-top: -50px;">
+        <div id="carousel-div" class="hidden-class mb-5" style="margin-top: -50px;">
             <div class="row">
                 <div class="col py-5 text-center">
                     <img class="d-block mx-auto mb-4" src="/assets/img/main-logo3.svg" alt="" width="82" height="82" />
                     <p class="lead info" style="font-family: Righteous;">
                         Fique por dentro das novidades!
+                       
                     </p>
+                    <div class="animation-center" style="display: flex; align-items: center; justify-content: center;">
+                        <ng-lottie width="180px" [options]="options" [styles]="styles"></ng-lottie>
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,7 +21,7 @@
         <div class="row" class="div-search-center">
             <div class="col-2 col-number" *ngFor="let filme of filmes">
                 <div class="card-transform text-center" id="card-filme" (click)="filmeDetalhes(filme.imdbID)">
-                    <img [src]="filme.Poster" class="card-img-top image dimensions" style="margin-bottom: 20px;" />
+                    <img [src]="filme.Poster" class="card-img-top dimensions" style="margin-bottom: 20px;" />
                     <small class="card-title show-title format-text" style="
                         padding-bottom: 10px;
                         

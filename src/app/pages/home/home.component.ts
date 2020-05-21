@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { SharedService } from "../../shared/services/shared.service";
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
     selector: "home",
@@ -10,8 +11,14 @@ import { SharedService } from "../../shared/services/shared.service";
 })
 export class HomeComponent implements OnInit {
     public filmes: [];
+    public options: AnimationOptions;
+    public styles;
 
-    constructor(private router: Router, private sharedService: SharedService) {}
+    constructor(private router: Router, private sharedService: SharedService) {
+        this.options = {
+            path: "/assets/animations/stars.json",
+        };
+    }
 
     ngOnInit() {
         this.getFilmes();
