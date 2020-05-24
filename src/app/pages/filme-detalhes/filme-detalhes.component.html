@@ -3,7 +3,7 @@
         <div class="container" style="margin-bottom: 60px;">
             <div class="row">
                 <div class="col-lg">
-                    <img [src]="filme.Poster" class="img-center" style="border-radius: 5px;"/>
+                    <img [src]="filme.Poster === 'N/A' ? 'assets/img/no-image.png' : filme.Poster" class="img-center" style="border-radius: 5px;"/>
                 </div>
                 <div class="col">
                     <h3 class="title">{{ filme.Title }}</h3>
