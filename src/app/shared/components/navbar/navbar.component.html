@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-xl fixed-top" id="navbar-menu">
     <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
-        <span style="font-family: 'Fredoka One', sans-serif;">FilmesDB</span>
+        <span style="font-family: 'Fredoka One', sans-serif;" id="logo">FilmesDB</span>
     </a>
 
     <button class="navbar-toggler collapsed btn-border" type="button" data-toggle="collapse"
@@ -12,14 +12,15 @@
     <div class="navbar-collapse collapse" id="navbarsExample01" style="">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link hidden-class" [routerLink]="['/']" id="home">Home <span
-                        class="sr-only">(current)</span></a>
+                <a class="nav-link hidden-class" [routerLink]="['/']" #linkHome (click)="mostrarAtivo(linkHome)"
+                    id="linkHomeMenu">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item hidden-class">
-                <a class="nav-link" id="quem_sou" [routerLink]="['/sobre']">Sobre</a>
+                <a class="nav-link" id="quem_sou" [routerLink]="['/sobre']" #linkSobre (click)="mostrarAtivo(linkSobre)"
+                    id="linkSobre">Sobre</a>
             </li>
             <li class="nav-item hidden-class">
-                <a class="nav-link" href="http://www.omdbapi.com/" target="_blank">OMDb API</a>
+                <a class="nav-link" href="http://www.omdbapi.com/" id="linkApi" target="_blank">OMDb API</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" [formGroup]="form" id="float-right">

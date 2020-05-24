@@ -22,6 +22,11 @@ body {
   background-color: #e0e3e6;
 }
 
+html{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 aplica.cursor-pointer {
   cursor: pointer;
 }
