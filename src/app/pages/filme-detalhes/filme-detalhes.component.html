@@ -1,68 +1,69 @@
 <div id="div-margin-bottom" *ngIf="detalhesFilme; else loading">
     <div *ngFor="let filme of detalhesFilme">
-        <div class="container" style="margin-bottom: 5px;">
-            <div class="row">
-                <div class="col-lg">
-                    <img [src]="filme.Poster === 'N/A' ? 'assets/img/no-image.png' : filme.Poster" class="img-center"
-                        style="border-radius: 5px;" />
-                </div>
-                <div class="col jumbotron">
-                    <h4 class="title">{{ filme.Title }}</h4>
-                    <small>{{ filme.Genre }}, {{ filme.Year }}</small><br />
-                    <small><strong>Director:</strong> {{ filme.Director }}</small><br />
-                    <small><strong>Released:</strong> {{ filme.Released }}</small><br />
-                    <small><strong>Production:</strong> {{ filme.Production }}</small><br />
-                    <small><strong>Runtime:</strong> {{ filme.Runtime }}</small><br />
-                    <small><strong>Type:</strong> {{ filme.Type }}</small>
-                    <p style="text-align: justify; margin-top: 15px;">
-                        {{ filme.Plot }}
-                    </p>
+        <div class="container-fluid">
+            <div class="container" style="margin-bottom: 5px;">
+                <div class="row">
+                    <div class="col-lg mb-1">
+                        <img [src]="filme.Poster === 'N/A' ? 'assets/img/no-image.png' : filme.Poster"
+                            class="img-center" style="border-radius: 5px;" />
+                    </div>
+                    <div class="col jumbotron">
+                        <h4 class="title">{{ filme.Title }}</h4>
+                        <small>{{ filme.Genre }}, {{ filme.Year }}</small><br />
+                        <small><strong>Director:</strong> {{ filme.Director }}</small><br />
+                        <small><strong>Released:</strong> {{ filme.Released }}</small><br />
+                        <small><strong>Production:</strong> {{ filme.Production }}</small><br />
+                        <small><strong>Runtime:</strong> {{ filme.Runtime }}</small><br />
+                        <small><strong>Type:</strong> {{ filme.Type }}</small>
+                        <p style="text-align: justify; margin-top: 15px;">
+                            {{ filme.Plot }}
+                        </p>
 
-                    <star-rating [ratingValue]="filme.imdbRating"></star-rating>
+                        <star-rating [ratingValue]="filme.imdbRating"></star-rating>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container jumbotron">
-           <div class="row">
-               <div class="col-6">
-                <h4>Ratings</h4>
-                <small  *ngFor="let rating of filme.Ratings"> <strong>{{ rating.Source }}:</strong>  {{ rating.Value }}<br /></small>
-                <small><strong>Metascore:</strong> {{ filme.Metascore }}</small><br />
-                <small><strong>Imdb Rating:</strong> {{ filme.imdbRating }}</small><br />
-                <small><strong>Imdb Votes:</strong> {{ filme.imdbVotes }}</small>
-               </div>
-               <div class="col-6 ">
-                <h4>Awards</h4>
-                <small> {{ filme.Awards }}</small>
-            </div>    
-           </div>
-        </div>
+            <div class="container jumbotron">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Ratings</h4>
+                        <small *ngFor="let rating of filme.Ratings"> <strong>{{ rating.Source }}:</strong>
+                            {{ rating.Value }}<br /></small>
+                        <small><strong>Metascore:</strong> {{ filme.Metascore }}</small><br />
+                        <small><strong>Imdb Rating:</strong> {{ filme.imdbRating }}</small><br />
+                        <small><strong>Imdb Votes:</strong> {{ filme.imdbVotes }}</small>
+                    </div>
+                    <div class="col-6 ">
+                        <h4>Awards</h4>
+                        <small> {{ filme.Awards }}</small>
+                    </div>
+                </div>
+            </div>
 
-        <div class="container jumbotron">
-            <h4>Actors</h4>
-            <small *ngFor="let act of actors"><strong>{{ act }}</strong><br /></small>
-        </div>
+            <div class="container jumbotron">
+                <h4>Actors</h4>
+                <small *ngFor="let act of actors"><strong>{{ act }}</strong><br /></small>
+            </div>
 
-        <div class="container jumbotron">
-            <h4>Writer(s)</h4>
-            <small *ngFor="let writer of writers"><strong>{{ writer }}</strong><br /></small>
-        </div>
+            <div class="container jumbotron">
+                <h4>Writer(s)</h4>
+                <small *ngFor="let writer of writers"><strong>{{ writer }}</strong><br /></small>
+            </div>
 
-        <div class="container jumbotron">
-            <h4>Media</h4>
-            <small><strong>Website:</strong> {{ filme.Website }}</small><br />
-            <small><strong>DVD:</strong> {{ filme.Dvd }}</small><br />
-            <small><strong>Box Office:</strong> {{ filme.BoxOffice }}</small><br />
-            <small><strong>Production:</strong> {{ filme.Production }}</small><br />
-        </div>
-       
-        <div class="container jumbotron">
-        <h4>More Information</h4>
-        <small><strong>Rated:</strong> {{ filme.Rated }}</small><br />
-        <small><strong>Actors:</strong> {{ filme.Actors }}</small><br />
-        <small><strong>Writer(s):</strong> {{ filme.Writer }}</small><br />
-        <small><strong>Country:</strong> {{ filme.Country }}</small><br />
-        <small><strong>Language:</strong> {{ filme.Language }}</small>
+            <div class="container jumbotron">
+                <h4>Media</h4>
+                <small><strong>Website:</strong> {{ filme.Website }}</small><br />
+                <small><strong>DVD:</strong> {{ filme.Dvd }}</small><br />
+                <small><strong>Box Office:</strong> {{ filme.BoxOffice }}</small><br />
+                <small><strong>Production:</strong> {{ filme.Production }}</small><br />
+            </div>
+
+            <div class="container jumbotron">
+                <h4>More Information</h4>
+                <small><strong>Rated:</strong> {{ filme.Rated }}</small><br />
+                <small><strong>Country:</strong> {{ filme.Country }}</small><br />
+                <small><strong>Language:</strong> {{ filme.Language }}</small>
+            </div>
         </div>
         <app-footer *ngIf="filme"></app-footer>
     </div>
