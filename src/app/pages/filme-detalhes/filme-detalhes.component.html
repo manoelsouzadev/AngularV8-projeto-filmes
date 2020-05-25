@@ -33,32 +33,32 @@
                         <small><strong>Imdb Rating:</strong> {{ filme.imdbRating }}</small><br />
                         <small><strong>Imdb Votes:</strong> {{ filme.imdbVotes }}</small>
                     </div>
-                    <div class="col-6 ">
+                    <div class="col-6 " *ngIf="filme.Awards">
                         <h4>Awards</h4>
-                        <small> {{ filme.Awards }}</small>
+                        <small> {{ filme.Awards === '' || filme.Awards === 'N/A' ? 'None' : filme.Awards }}</small>
                     </div>
                 </div>
             </div>
 
-            <div class="container jumbotron">
+            <div class="container jumbotron"  *ngIf="actors">
                 <h4>Actors</h4>
                 <small *ngFor="let act of actors"><strong>{{ act }}</strong><br /></small>
             </div>
 
-            <div class="container jumbotron">
+            <div class="container jumbotron" *ngIf="writers">
                 <h4>Writer(s)</h4>
                 <small *ngFor="let writer of writers"><strong>{{ writer }}</strong><br /></small>
             </div>
 
-            <div class="container jumbotron">
+            <div class="container jumbotron" *ngIf="filme.Website && filme.DVD && filme.BoxOffice && filme.Production">
                 <h4>Media</h4>
-                <small><strong>Website:</strong> {{ filme.Website }}</small><br />
+                <small><strong>Website:</strong> {{ filme.Website === '' ? 'None' : filme.Website }}</small><br />
                 <small><strong>DVD:</strong> {{ filme.DVD }}</small><br />
                 <small><strong>Box Office:</strong> {{ filme.BoxOffice }}</small><br />
                 <small><strong>Production:</strong> {{ filme.Production }}</small><br />
             </div>
 
-            <div class="container jumbotron">
+            <div class="container jumbotron"  *ngIf="filme.Rated && filme.Country && filme.Language">
                 <h4>More Information</h4>
                 <small><strong>Rated:</strong> {{ filme.Rated }}</small><br />
                 <small><strong>Country:</strong> {{ filme.Country }}</small><br />
