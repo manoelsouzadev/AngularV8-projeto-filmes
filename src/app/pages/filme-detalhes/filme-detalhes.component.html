@@ -24,23 +24,20 @@
                 </div>
             </div>
             <div class="container jumbotron">
-                <div class="row">
-                    <div class="col-7">
-                        <h4>Ratings</h4>
-                        <small *ngFor="let rating of filme.Ratings"> <strong>{{ rating.Source }}:</strong>
-                            {{ rating.Value }}<br /></small>
-                        <small><strong>Metascore:</strong> {{ filme.Metascore }}</small><br />
-                        <small><strong>Imdb Rating:</strong> {{ filme.imdbRating }}</small><br />
-                        <small><strong>Imdb Votes:</strong> {{ filme.imdbVotes }}</small>
-                    </div>
-                    <div class="col-5 " *ngIf="filme.Awards">
-                        <h4>Awards</h4>
-                        <small> {{ filme.Awards === '' || filme.Awards === 'N/A' ? 'None' : filme.Awards }}</small>
-                    </div>
-                </div>
+                <h4>Ratings</h4>
+                <small *ngFor="let rating of filme.Ratings"> <strong>{{ rating.Source }}:</strong>
+                    {{ rating.Value }}<br /></small>
+                <small><strong>Metascore:</strong> {{ filme.Metascore }}</small><br />
+                <small><strong>Imdb Rating:</strong> {{ filme.imdbRating }}</small><br />
+                <small><strong>Imdb Votes:</strong> {{ filme.imdbVotes }}</small>
             </div>
 
-            <div class="container jumbotron"  *ngIf="actors">
+            <div class="container jumbotron " *ngIf="filme.Awards">
+                <h4>Awards</h4>
+                <small> {{ filme.Awards === '' || filme.Awards === 'N/A' ? 'None' : filme.Awards }}</small>
+            </div>
+
+            <div class="container jumbotron" *ngIf="actors">
                 <h4>Actors/Actresses</h4>
                 <small *ngFor="let act of actors"><strong>{{ act }}</strong><br /></small>
             </div>
@@ -58,7 +55,8 @@
                 <small><strong>Production:</strong> {{ filme.Production }}</small><br />
             </div>
 
-            <div class="container jumbotron" style="margin-bottom: 80px;" *ngIf="filme.Rated && filme.Country && filme.Language">
+            <div class="container jumbotron" style="margin-bottom: 80px;"
+                *ngIf="filme.Rated && filme.Country && filme.Language">
                 <h4>More Information</h4>
                 <small><strong>Rated:</strong> {{ filme.Rated }}</small><br />
                 <small><strong>Country:</strong> {{ filme.Country }}</small><br />
