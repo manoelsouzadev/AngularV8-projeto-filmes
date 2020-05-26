@@ -57,3 +57,11 @@ aplica.cursor-pointer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.animation-center {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -22,7 +22,7 @@ export class FilmeNaoEncontradoComponent implements OnInit {
 
         this.options = {
             path: "/assets/animations/not-found.json",
-        };
+        }; 
     }
 
     ngOnInit() {}
