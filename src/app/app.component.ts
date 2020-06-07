@@ -10,7 +10,7 @@ import { timer } from 'rxjs';
 })
 export class AppComponent {
     protected form: FormGroup;
-    private showPage = false;
+    public showPage = false;
     constructor(private formBuilder: FormBuilder, private router: Router) {}
 
     ngOnInit() {
