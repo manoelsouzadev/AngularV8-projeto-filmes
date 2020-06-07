@@ -1,6 +1,7 @@
 import { Component, ElementRef } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { timer } from 'rxjs';
 
 @Component({
     selector: "app-root",
@@ -9,9 +10,11 @@ import { Router } from "@angular/router";
 })
 export class AppComponent {
     protected form: FormGroup;
+    private showPage = false;
     constructor(private formBuilder: FormBuilder, private router: Router) {}
 
     ngOnInit() {
+        timer(1000).subscribe(res => this.showPage = true);
         this.form = this.formBuilder.group({
             nome: [null, [Validators.required, Validators.minLength(4)]],
         });

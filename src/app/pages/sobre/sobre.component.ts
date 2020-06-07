@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { timer } from 'rxjs';
 
 import { AnimationOptions } from "ngx-lottie";
 
@@ -9,6 +10,7 @@ import { AnimationOptions } from "ngx-lottie";
 })
 export class SobreComponent implements OnInit {
     public options: AnimationOptions;
+    public showAnimation: boolean = false;
 
     constructor() {}
 
@@ -16,6 +18,10 @@ export class SobreComponent implements OnInit {
         this.options = {
             path: "/assets/animations/boy-laptop.json",
         };
+    }
+
+    ngAfterViewInit() {
+        timer(2000).subscribe(res => this.showAnimation = true);
     }
 
     scroll(el: HTMLElement): void {
