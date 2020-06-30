@@ -1,23 +1,32 @@
-<div style="text-align: center; margin-top: 70px; margin-bottom: 300px;" class="jumbotron">
-    <div class="animation-center">
-        <div>
-            <ng-lottie width="230px" [options]="options"></ng-lottie>
+<div class="container-fluid">
+    <div style="text-align: center; margin-top: 70px; margin-bottom: 300px;" class="jumbotron">
+        <div class="animation-center">
+            <div>
+                <ng-lottie *ngIf="showAnimation; else loading" width="230px" [options]="options"></ng-lottie>
+            </div>
+        </div>
+        <h5>
+            <strong>Desenvolvido por</strong>
+        </h5>
+        <p>
+            Manoel Souza, bacharel em Sistemas de Informação pela
+            Uninassau.
+        </p>
+        <a class="btn btn-sm btn-primary button-format"
+            href="https://www.linkedin.com/in/manoel-souza-995616150?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjDRR5XBzTtSkhkmcJT7k4Q%3D%3D"
+            role="button" target="_blank" data-toggle="tooltip" data-placement="bottom"
+            title="Ver perfil no Linkedin">Perfil Linkedin »</a>
+        <a style="margin-left: 10px;" class="btn btn-sm btn-primary button-format"
+            href="https://github.com/manoelsouzadev" role="button" target="_blank" data-toggle="tooltip"
+            data-placement="bottom" title="Ver perfil no Github">Perfil
+            Github »</a>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="d-flex justify-content-center" class="mb-4">
+        <div class="spinner-border text-light" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <h5>
-        <strong>Desenvolvido por</strong>
-    </h5>
-    <p>
-        Manoel Souza, bacharel em Sistemas de Informação pela
-        Uninassau.
-    </p>
-    <a class="btn btn-sm btn-primary button-format"
-        href="https://www.linkedin.com/in/manoel-souza-995616150?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjDRR5XBzTtSkhkmcJT7k4Q%3D%3D"
-        role="button" target="_blank" data-toggle="tooltip" data-placement="bottom"
-        title="Ver perfil no Linkedin">Perfil Linkedin »</a>
-    <a style="margin-left: 10px;" class="btn btn-sm btn-primary button-format" href="https://github.com/manoelsouzadev"
-        role="button" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Ver perfil no Github">Perfil
-        Github »</a>
-</div>
-
+</ng-template>
 <app-footer></app-footer>
